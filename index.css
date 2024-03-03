@@ -110,10 +110,9 @@ header {
         --border: 0.25rem;
         --dur: 200ms;
         --tf: cubic-bezier(0.215, 0.61, 0.355, 1);
-        --rgb: 30, 144, 255;
-        --color: rgba(var(--rgb), 0.5);
-        --color-adjacent: rgba(var(--rgb), 0.8);
-        --color-active: rgba(var(--rgb), 1);
+        --color: rgba(var(--accent-rgb), 0.5);
+        --color-adjacent: rgba(var(--accent-rgb), 0.8);
+        --color-active: rgba(var(--accent-rgb), 1);
         
         display: block;
         position: relative;
@@ -122,7 +121,7 @@ header {
         width: var(--size);
         height: var(--size);
         background-color: var(--color);
-        border-radius: 100%;
+        border-radius: 50px;
         transform-origin: 50% 100%;
         transition: calc(var(--dur) * 2) var(--tf);
         transition-property: transform, background-color;
@@ -146,12 +145,12 @@ header {
         
         &.previous,
         &.next {
-          transform: scale(1.25);
+          transform: scale(1.2);
           background-color: var(--color-adjacent);
         }
         
         &.active {
-          transform: scale(1.3);
+          transform: scale(1.4);
           background-color: var(--color-active);
           
           &:before {
@@ -164,6 +163,7 @@ header {
     /* Selected dot */
     .dot.active::after {
         content: var(--content);
+        width: max-content;
         color: #000;
         font-weight: 400;
         opacity: 0;
@@ -175,7 +175,8 @@ header {
     /* Not active */
     .dot:not(.active):hover::after {
         content: var(--content);
-        scale: 0.9;
+        width: max-content;
+        transform: scale(0.9);
         opacity: 0;
         color: #00000080;
         position: absolute;
@@ -186,6 +187,7 @@ header {
     /* Not active, not previous or not next */
     .dot:not(.active, .previous, .next):hover::after {
         transform: scale(1.25);
+        width: max-content;
         content: var(--content);
         opacity: 0;
         color: #00000080;
@@ -197,16 +199,17 @@ header {
     /* Not selected or hovered */
     .dot:not(.active, :hover)::after {
         content: var(--content);
-        scale: 0.9;
+        width: max-content;
+        transform: scale(0.9);
         opacity: 0;
         color: #00000080;
         position: absolute;
         right: 0;
-        animation: sidebar-text-out .3s .2s ease-out forwards;
+        animation: sidebar-text-out .3s ease-out forwards;
     }
 }
 
-#section2, #section3, #section4, #section5 {
+#about-me, #section3, #section4, #section5 {
     scroll-margin-top: 100px;
 }
 
@@ -316,7 +319,7 @@ header {
         font-family: Source Code Pro;
     }
     h1:hover {
-        rotate: -3deg;
+        transform: rotate(-3deg);
     }
     h1:first-child { /* First 'h1' */
         animation: changingHero 15s infinite both;
@@ -333,7 +336,7 @@ header {
   }
 
   .typewriterContainer:hover:has(h1:hover) {
-      rotate: -3deg;
+        transform: rotate(-3deg);
   }
 }
 
@@ -388,7 +391,33 @@ header {
 
     img {
         width: max(260px, 80%);
+        -webkit-user-select: none;
         user-select: none;
+    }
+
+    #download-cv {
+        position: relative;
+        transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    #download-cv:hover {
+        padding-left: 35px;
+    }
+
+    #download-cv::before {
+        content: '';
+        width: 23px;
+        height: 22px;
+        bottom: 6px;
+        opacity: 0;
+        position: absolute;
+        background-image: url(assets/icons/cv.svg);
+        background-size: contain;
+        transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    #download-cv:hover::before {
+        opacity: 1;
+        margin-left: -27px;
     }
 }
 
@@ -399,7 +428,7 @@ header {
     font-family: Afacad;
     text-align: center;
     font-size: clamp(23px, 1.9vw, 27px);
-    scale: 1;
+    transform: scale(1);
     font-weight: 500;
     width: 100%;
     padding-inline: 16%;
@@ -426,7 +455,7 @@ header {
 @keyframes text-appear {
     to {
         color: #00000015;
-        scale: 1;
+        transform: scale(1);
     }
 }
 
@@ -443,12 +472,13 @@ header {
     position: fixed;
     font-family: Poppins;
     cursor: var(--cursor-click);
+    -webkit-user-select: none;
     user-select: none;
     right: 1rem;
     bottom: 1rem;
     border: none;
     opacity: 0.4;
-    scale: 1;
+    transform: scale(1);
     z-index: 7;
     text-decoration: none;
     background-color: transparent;
@@ -559,33 +589,52 @@ header {
 
     .about-me {
         margin-block: 9%;
+        padding-inline: 12%;
     }
 
     .typewriterSimpler h1:hover {
-        rotate: 0deg !important;
+        transform: rotate(0deg) !important;
     }
     .typewriterContainer:hover:has(h1:hover) {
-        rotate: 0deg !important;
+        transform: rotate(0deg) !important;
     }
 }
 
 /* Sidebar Menu */
 @media (width < 1000px){
 
+    #header {
+        opacity: 0;
+    }
+
+    .header-show-hide {    
+        animation: fade-out 5.5s forwards !important;
+    }
+
+    @keyframes fade-out {
+        from {opacity: 1;}
+        80% {opacity: 1;}
+        to {opacity: 0;}
+    }
+
     .hero-picture {
         margin-top: 10%;
     }
 
+    .about-me {
+        margin-block: 13%;
+    }
+
     .dot-controls {
         flex-direction: row;
-        max-width: 320px;
-        min-width: 320px;
-        top: 4vh;
+        max-width: 380px;
+        min-width: 380px;
+        top: 5vh;
         left: 50%;
-        transform: translateX(-55.7%);
+        transform: translateX(-44%);
     }
     .dot-controls::before {
-        content: '';
+        content: var(--content);
         background: linear-gradient(to bottom, #fff, #fff, transparent);
         position: absolute;
         filter: blur(30px);
@@ -604,10 +653,13 @@ header {
         text-align: center;
         opacity: 0;
         position: absolute;
-        bottom: 120%;
+        bottom: 100%;
         animation: sidebar-text .3s ease-out forwards;
     }
 
+    .dot.active:nth-child(6)::after {
+        left: -460%;
+    }
     .dot.active:nth-child(5)::after {
         left: -460%;
     }
@@ -654,7 +706,7 @@ header {
     }
 
     .hero {
-        left: 52%;
+        left: 53%;
         font-size: 5vw;
         margin-bottom: -7%;
 
@@ -663,15 +715,14 @@ header {
         }
         .typewriterContainer {
             min-width: 412px !important;
-            margin: auto;
         }
 
         .typewriterSimpler {
             display: block;
-            margin-left: -5%;
+            margin-left: -1%;
 
             #especial {
-                margin-left: 8%;
+                margin-left: 6%;
             }
         }
     }

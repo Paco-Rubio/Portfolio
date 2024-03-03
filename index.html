@@ -10,8 +10,6 @@
     <title>Jorge | Portfolio</title>
 </head>
 
-
-
 <body id="body" class="scroll-container">
 
     <!-- JS Smooth scrolling -->
@@ -32,6 +30,9 @@
                     document.getElementById('icon').classList.remove('expand-icon');
                 }, 4500); // Wait for 4.5 seconds before adding the class
 
+                // Header
+                document.getElementById('header').classList.add('header-show-hide');
+
                 // Hero text delay
                 document.getElementById('typewriterContainer').style.setProperty('--initial-delay', '5.4s');
 
@@ -45,6 +46,7 @@
                 sessionStorage.setItem('hasVisited', 'true');
             } else {
 
+
                 // Animation background
                 document.getElementById('body').classList.add('hide-bg');
             }
@@ -53,7 +55,7 @@
 
     </script>
 
-    <header>
+    <header id="header">
         <svg class="logo" id="icon">
             <use href="#logo"></use>
         </svg>
@@ -118,13 +120,14 @@
     </script>
 
     <!-- Sidebar -->
-    <ul class="dot-controls" id="dot-controls">
+    <nav class="dot-controls" id="dot-controls">
         <a href="#" class="dot" style="--content: 'Inicio';"></a>
-        <a href="#section2" class="dot" style="--content: 'Sección';"></a>
-        <a href="#section3" class="dot" style="--content: 'Sección';"></a>
-        <a href="#section4" class="dot" style="--content: 'Sección';"></a>
-        <a href="#section5" class="dot" style="--content: 'Sección';"></a>
-    </ul>
+        <a href="#about-me" class="dot" style="--content: 'Sobre mí';"></a>
+        <a href="#skills" class="dot" style="--content: 'Habilidades';"></a>
+        <a href="#projects" class="dot" style="--content: 'Proyectos';"></a>
+        <a href="#education" class="dot" style="--content: 'Educación';"></a>
+        <a href="#contact" class="dot" style="--content: 'Contacto';"></a>
+    </nav>
 
     <!-- JS - Sidebar -->
     <script>
@@ -173,7 +176,23 @@
 
         const init = active => setActive(dots[active - 1]);
 
-        init(window.location.hash.replace('#section', '') || '1');
+        function getNumberFromHash() {
+            switch (window.location.hash) {
+                case '#about-me':
+                    return 2;
+                case '#skills':
+                    return 3;
+                case '#projects':
+                    return 4;
+                case '#education':
+                    return 5;
+                case '#contact':
+                    return 6;
+                default:
+                    return 1;
+            }
+        }
+        init(getNumberFromHash());
 
         controls.addEventListener('click', handleClick);
     </script>
@@ -199,15 +218,18 @@
         </div>
         <!-- Picture and CV Button -->
         <div class="picture-cv">
-            <img src="https://placeholder.pics/svg/400x600">
-            <a class="btn" href="extras/CV.pdf" target="_blank">Descargar CV</a>
+            <img alt="Profile Picture" src="https://placeholder.pics/svg/400x600">
+            <a class="btn" id="download-cv" href="extras\CV - Jorge López.pdf" target="_blank">Descargar CV</a>
         </div>
     </div>
 
-    <div class="about-me" id="section2">
+    <div class="about-me" id="about-me">
         <span class="text">
-            Apasionado de la tecnología y la informática con experiencia en todas las fases del desarrollo
-            de software: desde el diseño hasta el mantenimiento, pasando por el desarrollo y las pruebas.
+            Curioso por naturaleza, di mis primeros pasos en el mundo de la informática con tan solo 11 años.
+            Desde entonces, siempre he tenido claro que quería dedicar mi vida a la tecnología.
+            <br><br style="margin-bottom: -10px;">
+            Ahora, tras años de aprendizaje y esfuerzo, me dispongo a poner en práctica todos mis conocimientos y
+            habilidades en un entorno laboral.
             <br><br style="margin-bottom: -10px;">
             Comprometido y dedicado, mi enfoque no solo se centra en cumplir con las expectativas, sino en
             superarlas, aportando soluciones creativas y eficientes. La colaboración en equipo y la innovación

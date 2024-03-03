@@ -8,6 +8,7 @@
   --body-bg: #f8f8f8;
   --nav-bg: #c7dde7;
   --accent: #2091eb;
+  --accent-rgb: 32, 145, 235;
   --cursor-basic: url('assets/cursors/basic.png'), auto;
   --cursor-click: url('assets/cursors/click.png'), auto;
   --cursor-info: url('assets/cursors/info.png'), auto;
@@ -42,6 +43,7 @@ html {
   width: max-content;
   color: #000;
   white-space: nowrap;
+  -webkit-user-select: none;
   user-select: none;
   background-color: #fff;
   cursor: var(--cursor-click);
