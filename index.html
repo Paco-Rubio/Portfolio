@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="assets\icons\favicon.svg" rel="icon">
+    <title>Jorge | Portfolio</title>
+</head>
+
+
+
+<body id="body" class="scroll-container">
+
+    <!-- JS Smooth scrolling -->
+    <script src="SmoothScroll.js"></script>
+
+    <!-- JS - Startup animation -->
+    <script>
+
+        //Make it play only the first time
+        window.onload = function () {
+            var hasVisited = sessionStorage.getItem('hasVisited');
+
+            if (hasVisited != 'true') { // Show and play the animations
+
+                // Make the icon move and shrink
+                document.getElementById('icon').classList.add('expand-icon');
+                setTimeout(() => {
+                    document.getElementById('icon').classList.remove('expand-icon');
+                }, 4500); // Wait for 4.5 seconds before adding the class
+
+                // Hero text delay
+                document.getElementById('typewriterContainer').style.setProperty('--initial-delay', '5.4s');
+
+                // Make scrollbar appear after 4.5 seconds
+                document.getElementById('body').classList.add('hide-scrollbar');
+                setTimeout(() => {
+                    document.getElementById('body').classList.remove('hide-scrollbar');
+                }, 5000);
+
+                // Set the hasVisited flag in local storage
+                sessionStorage.setItem('hasVisited', 'true');
+            } else {
+
+                // Animation background
+                document.getElementById('body').classList.add('hide-bg');
+            }
+        };
+
+
+    </script>
+
+    <header>
+        <svg class="logo" id="icon">
+            <use href="#logo"></use>
+        </svg>
+    </header>
+
+    <div class="background"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- JS - Cursor follower -->
+    <script>
+
+        // POSITIONS
+        var lastMouseX = 0;
+        var lastMouseY = 0;
+
+        // ELEMENTS
+        var follower = document.getElementById('cursor-follower');
+
+        // EVENT LISTENERS AND FUNCTIONS
+        document.addEventListener('mousemove', function (e) {
+            lastMouseX = e.clientX; // Update the last known mouse X position
+            lastMouseY = e.clientY; // Update the last known mouse Y position
+            updateFollowerPosition(); // Update the follower position
+        });
+        window.addEventListener('scroll', function () {
+            updateFollowerPosition(); // Update the follower position on scroll
+        });
+
+        window.addEventListener('mousedown', function () {
+            follower.style.scale = '.5'
+            follower.style.background = '#00000099'
+            follower.style.filter = 'blur(20px)'
+        });
+        window.addEventListener('mouseup', function () {
+            follower.style.scale = '1'
+            follower.style.background = '#00000050'
+            follower.style.filter = 'blur(25px)'
+        });
+
+        function updateFollowerPosition() {
+            // Dynamically get the width and height of the follower element
+            var followerWidth = follower.offsetWidth;
+            var followerHeight = follower.offsetHeight;
+
+            // Calculate the scroll offset
+            var scrollX = window.pageXOffset;
+            var scrollY = window.pageYOffset;
+
+            // Adjust position with the last known mouse position and scroll offset
+            var leftPosition = lastMouseX + scrollX - followerWidth / 2;
+            var topPosition = lastMouseY + scrollY - followerHeight / 2;
+
+            // Update the position of the follower element
+            follower.style.left = leftPosition + 'px';
+            follower.style.top = topPosition + 'px';
+
+            // Only make the follower visible if it's not already visible
+            if (follower.style.visibility !== 'visible') {
+                follower.style.visibility = 'visible';
+            }
+        }
+    </script>
+
+    <!-- Sidebar -->
+    <ul class="dot-controls" id="dot-controls">
+        <a href="#" class="dot" style="--content: 'Inicio';"></a>
+        <a href="#section2" class="dot" style="--content: 'Sección';"></a>
+        <a href="#section3" class="dot" style="--content: 'Sección';"></a>
+        <a href="#section4" class="dot" style="--content: 'Sección';"></a>
+        <a href="#section5" class="dot" style="--content: 'Sección';"></a>
+    </ul>
+
+    <!-- JS - Sidebar -->
+    <script>
+        const controls = document.querySelector('.dot-controls');
+        const dots = controls.querySelectorAll('.dot');
+        const cls = {
+            previous: 'previous',
+            active: 'active',
+            next: 'next'
+        };
+        let activeIndex = 0;
+
+        const handleClassUpdates = el => {
+            dots.forEach(dot => dot.classList.remove(...Object.values(cls)));
+
+            el.classList.add(cls.active);
+
+            if (el.previousElementSibling) {
+                el.previousElementSibling.classList.add(cls.previous);
+            }
+
+            if (el.nextElementSibling) {
+                el.nextElementSibling.classList.add(cls.next);
+            }
+        }
+
+        const handleClick = event => {
+            if (event.target.matches('.dot')) setActive(event.target);
+        };
+
+        const setActive = el => {
+            let previousActiveIndex = activeIndex;
+            let selectedIndex = [...dots].indexOf(el);
+
+            if (selectedIndex === -1) selectedIndex = dots.length - 1;
+            activeIndex = selectedIndex;
+            animateDots(previousActiveIndex);
+        }
+
+        const animateDots = count => {
+            handleClassUpdates(dots[count]);
+            if (count === activeIndex) return;
+            count < activeIndex ? count++ : count--;
+            setTimeout(() => animateDots(count), 1000 / 30);
+        }
+
+        const init = active => setActive(dots[active - 1]);
+
+        init(window.location.hash.replace('#section', '') || '1');
+
+        controls.addEventListener('click', handleClick);
+    </script>
+
+    <!-- Hero and picture -->
+    <div class="hero-picture">
+        <!-- Hero -->
+        <div class="hero">
+            <h1 style="font-weight: 900; color: #000;">Soy Jorge,
+            </h1>
+            <div class="typewriterContainer" id="typewriterContainer">
+                <div class="typewriter">
+                    <h1> desarrollador</h1>
+                    <h1> diseñador web</h1>
+                    <h1> programador</h1>
+                </div>
+                <div class="typewriterSimpler">
+                    <h1> desarrollador</h1>
+                    <h1> diseñador web</h1>
+                    <h1 id="especial"> programador</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Picture and CV Button -->
+        <div class="picture-cv">
+            <img src="https://placeholder.pics/svg/400x600">
+            <a class="btn" href="extras/CV.pdf" target="_blank">Descargar CV</a>
+        </div>
+    </div>
+
+    <div class="about-me" id="section2">
+        <span class="text">
+            Apasionado de la tecnología y la informática con experiencia en todas las fases del desarrollo
+            de software: desde el diseño hasta el mantenimiento, pasando por el desarrollo y las pruebas.
+            <br><br style="margin-bottom: -10px;">
+            Comprometido y dedicado, mi enfoque no solo se centra en cumplir con las expectativas, sino en
+            superarlas, aportando soluciones creativas y eficientes. La colaboración en equipo y la innovación
+            están en el corazón de mi trabajo, impulsando cada proyecto hacia el éxito.
+        </span>
+    </div>
+
+    <!-- Call to Action -->
+    <button class="calltoaction" tabindex="-1">
+        <a href="contact.html" tabindex="-1"><span class="btnText">CONTÁCTAME !</span></a>
+    </button>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+<!-- SVGs -->
+
+<svg style="display:none;">
+    <defs>
+        <symbol id="logo" viewBox="0 0 500 500">
+            <path
+                d="M 249.588 438.879 C 222.287 438.879 200.625 431.46 184.6 416.623 C 168.575 401.786 160.563 381.785 160.563 356.62 L 213.978 356.62 C 213.978 367.541 217.183 376.265 223.593 382.793 C 230.002 389.322 238.667 392.586 249.588 392.586 C 260.509 392.586 269.174 389.44 275.583 383.149 C 281.993 376.858 285.198 368.253 285.198 357.332 L 285.198 175.365 L 338.613 175.365 L 338.613 357.332 C 338.613 382.497 330.66 402.379 314.754 416.979 C 298.849 431.579 277.127 438.879 249.588 438.879 Z"
+                style="stroke-linecap: square; stroke-linejoin: bevel;"
+                transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 5.684341886080802e-14)" />
+            <rect style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round; fill-opacity: 0;" x="-200"
+                y="124.819" width="214.659" height="38.258" rx="19.129" ry="19.129"
+                transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 5.684341886080802e-14)">
+                <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;449 0"
+                    dur="2.02s" fill="freeze" begin="0.03s" keyTimes="0; 1" calcMode="spline" keySplines="0.09 1 1 1" />
+                <animate attributeName="fill-opacity" values="0;1" begin="0.25s" dur="0.44s" fill="freeze"
+                    keyTimes="0; 1" />
+            </rect>
+            <rect
+                style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.2544; stroke-opacity: 0; fill-opacity: 0;"
+                x="539" y="83.471" width="151.524" height="31.282" rx="15.641" ry="15.641"
+                transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 5.684341886080802e-14)">
+                <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-285 0"
+                    dur="1.89s" fill="freeze" keyTimes="0; 1" calcMode="spline" keySplines="0.42 0 0.58 1"
+                    begin="1.5s" />
+                <animate attributeName="fill-opacity" values="0;1" begin="2.59s" dur="0.4s" fill="freeze"
+                    keyTimes="0; 1" />
+            </rect>
+            <rect
+                style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.2544; stroke-opacity: 0; fill-opacity: 0; transform-origin: 547.092px 98.963px;"
+                x="528.151" y="80.173" width="37.881" height="37.58" rx="18.79" ry="18.79">
+                <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;-115 0"
+                    begin="2.66s" dur="1.8s" keyTimes="0; 1" fill="freeze" calcMode="spline"
+                    keySplines="0.42 0 0.58 1" />
+                <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;1.1 1.1;1 1"
+                    begin="4.4s" dur="2.84s" fill="freeze" keyTimes="0; 0.50832; 1" calcMode="spline"
+                    keySplines="0.25 0.1 0.25 1; 0 0 1 1" />
+                <animate attributeName="fill-opacity" values="0;1" begin="3.63s" dur="0.52s" fill="freeze"
+                    keyTimes="0; 1" />
+            </rect>
+        </symbol>
+        <!-- More symbols -->
+        <symbol></symbol>
+    </defs>
+</svg>
+
+</html>

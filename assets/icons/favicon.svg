@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="100 55.862 401.386 402.337" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 249.588 438.879 C 222.287 438.879 200.625 431.46 184.6 416.623 C 168.575 401.786 160.563 381.785 160.563 356.62 L 213.978 356.62 C 213.978 367.541 217.183 376.265 223.593 382.793 C 230.002 389.322 238.667 392.586 249.588 392.586 C 260.509 392.586 269.174 389.44 275.583 383.149 C 281.993 376.858 285.198 368.253 285.198 357.332 L 285.198 175.365 L 338.613 175.365 L 338.613 357.332 C 338.613 382.497 330.66 402.379 314.754 416.979 C 298.849 431.579 277.127 438.879 249.588 438.879 Z" style="stroke-linecap: square; stroke-linejoin: bevel;" transform="matrix(1, 0, 0, 1, 0, 5.684341886080802e-14)"/>
+  <rect style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round;" x="250.713" y="124.819" width="209.546" height="38.258" rx="19.129" ry="19.129"/>
+  <rect style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round;" x="250.713" y="70.495" width="149.287" height="38.258" rx="19.129" ry="19.129"/>
+  <rect style="paint-order: fill; stroke-linecap: round; stroke-linejoin: round;" x="411.259" y="62.753" width="51" height="51" rx="25.5" ry="25.5"/>
+
+  <style>
+    path, rect { fill: #000; }
+
+    @media (prefers-color-scheme: dark) {
+      path, rect { fill: #fff; }
+    }
+    </style>
+</svg>

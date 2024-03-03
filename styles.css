@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500);
+@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500);
+@import url(https://fonts.googleapis.com/css2?family=Afacad:wght@400..700);
+
+/* - MAIN STYLES - */
+
+:root {
+  --body-bg: #f8f8f8;
+  --nav-bg: #c7dde7;
+  --accent: #2091eb;
+  --cursor-basic: url('assets/cursors/basic.png'), auto;
+  --cursor-click: url('assets/cursors/click.png'), auto;
+  --cursor-info: url('assets/cursors/info.png'), auto;
+}
+  
+/* BASIC STYLES */
+html {
+  font-family: Poppins;
+  cursor: var(--cursor-basic);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* USED FOR DEBUGGING AND ELEMENT POSITIONING */
+.box {
+  outline: red 5px solid;
+}
+
+/* CUSTOM HEIGHT <BR> */
+.br {
+  content: '';
+  display: block;
+  margin-bottom: 1.5% !important;
+}
+
+/* BUTTONS */
+.btn {
+  height: 35px;
+  width: max-content;
+  color: #000;
+  white-space: nowrap;
+  user-select: none;
+  background-color: #fff;
+  cursor: var(--cursor-click);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: box-shadow .3s;
+  box-shadow: 0 2px 6px rgba(18,43,105,.04), 0 1px 2px rgba(18,43,105,.08), 0 0 0 1px rgba(18,43,105,.08);
+}
+.btn:hover, .btn:focus-visible {
+  box-shadow: 0 2px 6px rgba(18,43,105,.2), 0 1px 2px rgba(18,43,105,.2), 0 0 0 1px rgba(18,43,105,.2);
+}
+
+/* SELECTION */
+::selection {
+  background: #1e88dd60;  
+}
+
+/* SCROLLBARS */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 5px;
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #258dddbb;
+  border-radius: 50px;
+  border: var(--body-bg) solid 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #258ddd;
+}
+::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+}
