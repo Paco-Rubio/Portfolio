@@ -601,7 +601,7 @@ header {
 
     .about-me {
         margin-block: 9%;
-        padding-inline: 12%;
+        padding-inline: 10%;
     }
 }
 
@@ -705,8 +705,19 @@ header {
 
     }
 
+    .dot-controls::before {
+        content: '';
+        width: 100vw;
+        height: 7rem;
+        top: -2rem;
+        z-index: -1;
+        filter: blur(2px);
+        background: linear-gradient(to bottom, #f8f8f8, #f8f8f8, transparent);
+        position: absolute;
+    }
+
     .sidebar-hide {
-        transition: top .3s .3s ease-in-out !important;
+        transition: top .2s .2s ease-in-out !important;
         top: -7.2rem !important;
     }
 }
