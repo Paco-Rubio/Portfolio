@@ -668,7 +668,8 @@ header {
         flex-direction: row;
         justify-content: center;
         width: 87%;
-        top: 1rem;
+        top: 0rem;
+        padding-top: 0.5rem;
         left: 50%;
         transform: translateX(-50%);
         transition: top .3s ease-in-out;
@@ -711,13 +712,12 @@ header {
         height: 7rem;
         top: -2rem;
         z-index: -1;
-        filter: blur(2px);
         background: linear-gradient(to bottom, #f8f8f8, #f8f8f8, transparent);
         position: absolute;
     }
 
     .sidebar-hide {
-        transition: top .2s .2s ease-in-out !important;
+        transition: top .2s .3s ease-in-out !important;
         top: -7.2rem !important;
     }
 }
@@ -781,6 +781,21 @@ header {
 
     .typewriterSimpler {
         margin-left: -2.1rem !important;
+    }
+
+    .dot-controls > .dot {
+
+        margin-inline: 0.4rem;
+
+        &.active::before {
+            line-height: 190%;
+            font-size: 11px;
+        }
+    }
+
+    .dot.active {
+        min-width: 4.9rem !important;
+        max-width: 4.9rem !important;
     }
 }
 
