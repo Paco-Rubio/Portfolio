@@ -242,100 +242,104 @@ header {
 
 .hero-picture {
     --initial-delay: 0.3s;
+    position: relative;
     margin-top: 130px;
     display: flex;
     gap: 35px;
 }
 
-/* Hero */
+/* HERO */
+
+.heroContainer {
+    width: 80%;
+    margin-left: 15%;
+    margin-right: -33%;
+}
 
 .hero {
     position: relative;
-    width: 60%;
+    width: 100%;
     font-family: Poppins;
     font-size: clamp(35px, 2.6vw, 50px);    
     margin-top: 50px;
-    margin-left: 15%;
-    margin-right: -15%;
-  
-  .typewriterContainer {
-      transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
-      width: 86%;
-      height: 6rem;
-      margin-top: -5%;
-      transform-origin: 90%;
-  }
-
-  .typewriter{
-
-      h1 {
-          margin: 0;
-          color:#353535;
-          position: absolute;
-          visibility: hidden;
-          font-family: Source Code Pro; /* Monospace font */
-          font-size: 70px;    
-          overflow: hidden; /* Hide the text that doesn't fit into current width */
-          border-right: .12em solid #2091eb; /* Simulates a cursor */
-          white-space: nowrap; /* Keeps the content on a single line */
-          letter-spacing: .09em; /* Needed to make the animation work */
-      }
-      h1:first-child { /* First 'h1' */
-          --characters: 14;
-          animation: 
-          typing 15s steps(13) infinite,
-          blink-caret 15s infinite;
-          animation-delay: var(--initial-delay);
-      }
-      h1:nth-child(2) { /* Second 'h1' */
-          --characters: 14;
-          animation: 
-          typing 15s steps(13) infinite,
-          blink-caret 15s infinite;
-          animation-delay: calc(5s + var(--initial-delay));
-      }
-      h1:nth-child(3) { /* Third 'h1' */
-          --characters: 12;
-          animation: 
-          typing 15s steps(11) infinite,
-          blink-caret 15s infinite;
-          animation-delay: calc(10s + var(--initial-delay));
-      }
-  }
-
-  .typewriterContainer:hover:has(h1:hover) {
-        transform: rotate(-3deg);
-  }
 }
 
-.typewriterSimpler {
-    display: none;
-    width: 100%;
-    margin-top: -20px;
-    margin-bottom: 30%;
+.typewriterContainer {
+    transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
+    height: 6rem;
+    margin-top: 10%;
+    width: 65%;
+    transform-origin: 90%;
     
-    h1 {
-        margin-left: 50%;
-        transform: translateX(-52.5%);
-        visibility: hidden;
-        font-size: max(7vw, 35px);
-        color:#353535;
-        white-space: nowrap;
-        position: absolute;
-        font-family: Source Code Pro;
+    .typewriter{
+
+        h1 {
+            margin: 0;
+            color:#353535;
+            position: absolute;
+            visibility: hidden;
+            font-family: Source Code Pro; /* Monospace font */
+            font-size: 70px;  
+            overflow: hidden; /* Hide the text that doesn't fit into current width */
+            border-right: .12em solid #2091eb; /* Simulates a cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            letter-spacing: .09em; /* Needed to make the animation work */
+        }
+        h1:first-child { /* First 'h1' */
+            --characters: 14;
+            animation: 
+            typing 15s steps(13) infinite,
+            blink-caret 15s infinite;
+            animation-delay: var(--initial-delay);
+        }
+        h1:nth-child(2) { /* Second 'h1' */
+            --characters: 14;
+            animation: 
+            typing 15s steps(13) infinite,
+            blink-caret 15s infinite;
+            animation-delay: calc(5s + var(--initial-delay));
+        }
+        h1:nth-child(3) { /* Third 'h1' */
+            --characters: 12;
+            animation: 
+            typing 15s steps(11) infinite,
+            blink-caret 15s infinite;
+            animation-delay: calc(10s + var(--initial-delay));
+        }
     }
-    h1:first-child { /* First 'h1' */
-        animation: changingHero 15s infinite both;
-        animation-delay: var(--initial-delay);
+
+    .typewriterSimpler {
+        margin-top: -14%;
+        opacity: 0;
+        width: 100%;
+        
+        h1 {
+            margin-left: 11.5%;
+            visibility: hidden;
+            font-size: max(7vw, 35px);
+            color:#353535;
+            white-space: nowrap;
+            position: absolute;
+            font-family: Source Code Pro;
+        }
+        h1:first-child { /* First 'h1' */
+            animation: changingHero 15s infinite both;
+            animation-delay: var(--initial-delay);
+        }
+        h1:nth-child(2) { /* Second 'h1' */
+            animation: changingHero 15s infinite both;
+            animation-delay: calc(5s + var(--initial-delay));
+        }
+        h1:nth-child(3) { /* Third 'h1' */
+            margin-left: 15%;
+            animation: changingHero 15s infinite both;
+            animation-delay: calc(10s + var(--initial-delay));
+        }
     }
-    h1:nth-child(2) { /* Second 'h1' */
-        animation: changingHero 15s infinite both;
-        animation-delay: calc(5s + var(--initial-delay));
-    }
-    h1:nth-child(3) { /* Third 'h1' */
-        animation: changingHero 15s infinite both;
-        animation-delay: calc(10s + var(--initial-delay));
-    }
+}
+
+.typewriterContainer:hover:has(h1:hover) {
+      transform: rotate(-3deg);
 }
 
 @keyframes typing { /* Typewriting animation */
@@ -362,10 +366,10 @@ header {
         visibility: visible;
         opacity: 0;
     }
-    20%, 25% {
+    15%, 29% {
         opacity: 1;
     }
-    30%, 100% {
+    33%, 100% {
         opacity: 0;
         visibility: hidden;
     }
@@ -431,7 +435,6 @@ header {
     width: 100%;
     padding-inline: 16%;
     margin-block: 8%;
-    color: #000000;
     color: #00000000;
     animation: text-appear both;
     animation-timeline: view();
@@ -563,21 +566,31 @@ header {
     50% {transform: translateY(-9px);}
 }
 
-/* Hero-picture and about-me */
-@media (height > 863px){
-
-    .hero-picture {
-        margin-block: 12%;
-    }
-}
-
-/* Hero and about-me*/
+/* Hero and about-me */
 @media (width < 1400px){
 
     .hero-picture {
         margin-top: 6%;
         flex-direction: column;
 
+        .heroContainer {
+            width: 80%;
+            margin-inline: auto;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .typewriterContainer {
+            width: 62%;
+            text-align: center;
+            margin-inline: auto !important;
+            .typewriter {
+                transform: scale(0.9);
+            }
+        }
+        
         .picture-cv {
             padding-top: 3rem;
             margin: auto;
@@ -591,8 +604,26 @@ header {
     }
 }
 
+@media (width < 1250px){
+
+    .typewriterContainer {
+        width: 70% !important;
+    }
+}
+
+@media (width < 1080px){
+
+    .typewriterContainer {
+        width: 77% !important;
+    }
+}
+
 /* Sidebar Menu */
 @media (width < 1000px){
+
+    .typewriterContainer {
+        width: 83% !important;
+    }
 
     #header {
         opacity: 0;
@@ -600,12 +631,25 @@ header {
 
     .header-show-hide {    
         animation: fade-out 5.5s forwards !important;
-    }
-
+    }    
+    
     @keyframes fade-out {
         from {opacity: 1;}
         80% {opacity: 1;}
         to {opacity: 0;}
+    }
+
+    .typewriter {
+        transform: scale(0.9);
+    }
+
+    .hero {
+        text-align: center;
+        margin-inline: auto !important;
+    }
+
+    .hero > h1 {
+        margin-left: 0rem !important;
     }
 
     .hero-picture {
@@ -689,32 +733,52 @@ header {
     }
 }
 
+@media (width < 920px){
+
+    .typewriterContainer {
+        width: 90% !important;
+    }
+}
+
 /* Typewriter and scrollbar */
 @media (width < 830px){
-
+    
     .hero-picture {
-        margin-top: 25%;
+        margin-top: 10%;
     }
-
+    
     .hero {
         font-size: 5vw;
         margin-bottom: -7%;
-        margin-left: auto;
-        margin-right: auto;
-
-        .typewriter {
-            display: none;
-        }
     }     
+    
     .typewriterContainer {
+        width: 100% !important;
+    }
+    
+    .typewriter {
+        transform: scale(0.55);
+    }  
+    
+    ::-webkit-scrollbar {
         display: none;
-    }   
-    .typewriterSimpler {
-        display: block;
+    }
+}
+
+@media (width < 750px){
+
+    .typewriterContainer {
+        transition: none !important;
     }
 
-  ::-webkit-scrollbar {
-    display: none;
+    .typewriter {
+        display: none;
+    }
+    .typewriterSimpler {
+        opacity: 1 !important;
+    }
+    .typewriterContainer:hover:has(h1:hover) {
+        transform: none;
   }
 }
 
