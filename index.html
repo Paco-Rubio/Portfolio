@@ -74,6 +74,11 @@
         // ELEMENTS
         var follower = document.getElementById('cursor-follower');
 
+        // CHECK TOUCH SCREENS
+        if (window.matchMedia("(pointer: coarse)").matches) {
+            follower.style.display = 'none';
+        }
+
         // EVENT LISTENERS AND FUNCTIONS
         document.addEventListener('mousemove', function (e) {
             lastMouseX = e.clientX; // Update the last known mouse X position

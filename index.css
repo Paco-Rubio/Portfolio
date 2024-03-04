@@ -709,6 +709,7 @@ header {
         left: 53%;
         font-size: 5vw;
         margin-bottom: -7%;
+        transform: translateX(-50%);
 
         .typewriter {
             display: none;
