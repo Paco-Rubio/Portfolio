@@ -311,7 +311,6 @@ header {
 
     .typewriterSimpler {
         margin-top: -20%;
-        margin-left: max(-5%, -2rem);
         opacity: 0;
         width: 100%;
         
@@ -624,6 +623,7 @@ header {
 @media (width < 1000px){
 
     .typewriterContainer {
+        margin-top: 16% !important;
         width: 83% !important;
     }
 
@@ -671,6 +671,7 @@ header {
         top: 1rem;
         left: 50%;
         transform: translateX(-50%);
+        transition: top .3s ease-in-out;
 
         .dot {
             --size: 1.7rem;
@@ -703,11 +704,17 @@ header {
         { content: none !important;}
 
     }
+
+    .sidebar-hide {
+        transition: top .3s .3s ease-in-out !important;
+        top: -7.2rem !important;
+    }
 }
 
 @media (width < 920px){
 
     .typewriterContainer {
+        margin-top: 20% !important  ;
         width: 90% !important;
     }
 }
@@ -725,6 +732,7 @@ header {
     }     
     
     .typewriterContainer {
+        margin-top: 15% !important;
         width: 100% !important;
     }
     

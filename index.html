@@ -203,6 +203,20 @@
         init(getNumberFromHash());
 
         controls.addEventListener('click', handleClick);
+
+        // Sidebar-header hiding logic
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > (currentScrollPos)) {
+                document.querySelector('.dot-controls').classList.remove('sidebar-hide');
+            } else {
+                document.querySelector('.dot-controls').classList.add('sidebar-hide');
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
     </script>
 
     <!-- Hero and picture -->
