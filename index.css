@@ -257,15 +257,12 @@ header {
     margin-top: 50px;
     margin-left: 15%;
     margin-right: -15%;
-
-  h1 {
-      margin: 0;
-  }
   
   .typewriterContainer {
       transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
       width: 86%;
       height: 6rem;
+      margin-top: -5%;
       transform-origin: 90%;
   }
 
@@ -313,10 +310,13 @@ header {
 
 .typewriterSimpler {
     display: none;
-    margin: auto;
+    width: 100%;
+    margin-top: -20px;
     margin-bottom: 30%;
-
+    
     h1 {
+        margin-left: 50%;
+        transform: translateX(-52.5%);
         visibility: hidden;
         font-size: max(7vw, 35px);
         color:#353535;
@@ -336,7 +336,7 @@ header {
         animation: changingHero 15s infinite both;
         animation-delay: calc(10s + var(--initial-delay));
     }
-  }
+}
 
 @keyframes typing { /* Typewriting animation */
 
@@ -430,7 +430,7 @@ header {
     font-weight: 500;
     width: 100%;
     padding-inline: 16%;
-    margin-block: 7%;
+    margin-block: 8%;
     color: #000000;
     color: #00000000;
     animation: text-appear both;
