@@ -265,10 +265,10 @@ header {
 }
 
 .typewriterContainer {
-    transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
+    transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
     height: 6rem;
     width: 65%;
-    margin-top: 10%;
+    margin-top: 14%;
     transform-origin: 90%;
     
     .typewriter{
@@ -309,7 +309,8 @@ header {
     }
 
     .typewriterSimpler {
-        margin-top: -14%;
+        margin-top: -20%;
+        margin-left: -5%;
         opacity: 0;
         width: 100%;
         
