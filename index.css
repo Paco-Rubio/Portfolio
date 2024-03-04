@@ -797,6 +797,10 @@ header {
         min-width: 4.9rem !important;
         max-width: 4.9rem !important;
     }
+
+    .about-me {
+        padding-inline: 6% !important;
+    }
 }
 
 /* LOGO FILL COLORS */
