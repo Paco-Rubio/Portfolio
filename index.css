@@ -254,8 +254,8 @@ header {
     font-family: Poppins;
     font-size: clamp(35px, 2.6vw, 50px);    
     margin-top: 50px;
-    left: 45%;
-    transform: translateX(-50%);
+    margin-left: 15%;
+    margin-right: -15%;
 
   h1 {
       margin: 0;
@@ -706,10 +706,10 @@ header {
     }
 
     .hero {
-        left: 53%;
         font-size: 5vw;
         margin-bottom: -7%;
-        transform: translateX(-50%);
+        margin-left: auto;
+        margin-right: auto;
 
         .typewriter {
             display: none;
@@ -720,11 +720,6 @@ header {
 
         .typewriterSimpler {
             display: block;
-            margin-left: -1%;
-
-            #especial {
-                margin-left: 6%;
-            }
         }
     }
 
