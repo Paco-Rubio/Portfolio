@@ -249,6 +249,7 @@ header {
 /* Hero */
 
 .hero {
+    --initial-delay: 0.3s;
     position: relative;
     width: 60%;
     font-family: Poppins;
@@ -262,7 +263,6 @@ header {
   }
   
   .typewriterContainer {
-      --initial-delay: 0.3s;
       transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
       width: 86%;
       height: 6rem;
@@ -306,20 +306,22 @@ header {
       }
   }
 
-  .typewriterSimpler {
-    display: none;
+  .typewriterContainer:hover:has(h1:hover) {
+        transform: rotate(-3deg);
+  }
+}
+
+.typewriterSimpler {
+    /* display: none; */
+    margin: auto;
 
     h1 {
         visibility: hidden;
         font-size: max(7vw, 35px);
-        margin: 0;
         color:#353535;
         white-space: nowrap;
         position: absolute;
         font-family: Source Code Pro;
-    }
-    h1:hover {
-        transform: rotate(-3deg);
     }
     h1:first-child { /* First 'h1' */
         animation: changingHero 15s infinite both;
@@ -334,11 +336,6 @@ header {
         animation-delay: calc(10s + var(--initial-delay));
     }
   }
-
-  .typewriterContainer:hover:has(h1:hover) {
-        transform: rotate(-3deg);
-  }
-}
 
 @keyframes typing { /* Typewriting animation */
 
@@ -573,7 +570,7 @@ header {
     }
 }
 
-/* Hero, about-me and typewriter rotation */
+/* Hero and about-me*/
 @media (width < 1400px){
 
     .hero-picture {
@@ -590,13 +587,6 @@ header {
     .about-me {
         margin-block: 9%;
         padding-inline: 12%;
-    }
-
-    .typewriterSimpler h1:hover {
-        transform: rotate(0deg) !important;
-    }
-    .typewriterContainer:hover:has(h1:hover) {
-        transform: rotate(0deg) !important;
     }
 }
 
@@ -714,13 +704,9 @@ header {
         .typewriter {
             display: none;
         }
-        .typewriterContainer {
-            min-width: 412px !important;
-        }
-
-        .typewriterSimpler {
-            display: block;
-        }
+    }        
+    .typewriterSimpler {
+        display: block;
     }
 
   ::-webkit-scrollbar {
