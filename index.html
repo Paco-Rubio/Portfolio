@@ -32,6 +32,9 @@
 
                 // Header
                 document.getElementById('header').classList.add('header-show-hide');
+                setTimeout(() => {
+                    document.getElementById('header').classList.remove('header-show-hide');
+                }, 5000);
 
                 // Hero text delay
                 document.getElementById('typewriterContainer').style.setProperty('--initial-delay', '5.4s');

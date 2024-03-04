@@ -151,6 +151,7 @@ header {
         
         &.active {
           transform: scale(1.4);
+          cursor: var(--cursor-normal);
           background-color: var(--color-active);
           
           &:before {
@@ -628,14 +629,16 @@ header {
 
     #header {
         opacity: 0;
+        display: none;
     }
 
     .header-show-hide {    
+        display: block !important;
         animation: fade-out 5.5s forwards !important;
     }    
     
     @keyframes fade-out {
-        from {opacity: 1;}
+        from {opacity: 1; }
         80% {opacity: 1;}
         to {opacity: 0;}
     }
