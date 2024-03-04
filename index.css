@@ -314,6 +314,7 @@ header {
 .typewriterSimpler {
     /* display: none; */
     margin: auto;
+    margin-bottom: 30%;
 
     h1 {
         visibility: hidden;
@@ -704,7 +705,10 @@ header {
         .typewriter {
             display: none;
         }
-    }        
+    }     
+    .typewriterContainer {
+        display: none;
+    }   
     .typewriterSimpler {
         display: block;
     }
