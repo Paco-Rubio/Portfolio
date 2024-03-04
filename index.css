@@ -310,7 +310,7 @@ header {
 
     .typewriterSimpler {
         margin-top: -20%;
-        margin-left: -5%;
+        margin-left: max(-5%, -2rem);
         opacity: 0;
         width: 100%;
         
