@@ -783,6 +783,13 @@ header {
   }
 }
 
+@media (width < 450px){
+
+    .typewriterSimpler {
+        margin-left: -2rem;
+    }
+}
+
 /* LOGO FILL COLORS */
 
 .logo > path, rect { fill: #000; }
