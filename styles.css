@@ -19,6 +19,7 @@ html {
   font-family: Poppins;
   cursor: var(--cursor-basic);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
