@@ -1022,7 +1022,7 @@ body::before { /* Icon startup animation */
         text-align: left;
     }
 
-    #about-me, #skills, #projects, #education, #contact {
+    #about-me, #projects, #education, #contact {
         scroll-margin-top: 100px;
     }
 }
