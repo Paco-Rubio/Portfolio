@@ -93,6 +93,7 @@ header {
     transform: translate(-58%, -50%); /* Center the element */
 }
 
+
 /* SIDEBAR */
 
 .dot-controls { 
@@ -177,7 +178,7 @@ header {
     .dot:not(.active):hover::after {
         content: var(--content);
         width: max-content;
-        transform: scale(0.9);
+        transform: scale(1);
         opacity: 0;
         color: #00000080;
         position: absolute;
@@ -210,7 +211,7 @@ header {
     }
 }
 
-#about-me, #section3, #section4, #section5 {
+#about-me, #skills, #projects, #education, #contact {
     scroll-margin-top: 100px;
 }
 
@@ -239,6 +240,7 @@ header {
     }
 }
 
+
 /* HERO & PICTURE */
 
 .hero-picture {
@@ -249,7 +251,7 @@ header {
     gap: 35px;
 }
 
-/* HERO */
+/* Hero */
 
 .heroContainer {
     width: 80%;
@@ -266,13 +268,13 @@ header {
 }
 
 .typewriterContainer {
-    transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
     height: 6rem;
     width: 65%;
     margin-top: 14%;
-    transform-origin: 90%;
     
-    .typewriter{
+    .typewriter {
+        transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1) 60.6676ms;
+        transform-origin: 90%;
 
         h1 {
             margin: 0;
@@ -339,8 +341,8 @@ header {
     }
 }
 
-.typewriterContainer:hover:has(h1:hover) {
-      transform: rotate(-3deg);
+.typewriter:hover:has(h1:hover) {
+      transform: rotate(-2deg);
 }
 
 @keyframes typing { /* Typewriting animation */
@@ -431,16 +433,15 @@ header {
     font-family: Afacad;
     text-align: center;
     font-size: clamp(23px, 1.9vw, 27px);
-    transform: scale(1);
     font-weight: 500;
     width: 100%;
-    padding-inline: 16%;
+    padding-inline: 15%;
     margin-block: 8%;
     color: #00000000;
-    animation: text-appear both;
-    animation-timeline: view();
+    animation: text-appear linear both;
+    animation-timeline: scroll(root);
     animation-duration: 1ms;
-    animation-range: cover 0% cover 30%;
+    animation-range: cover 0% cover 20%;
 
     .text {
         background-clip: text;
@@ -448,22 +449,85 @@ header {
         background-size: 0% 100%;
         background-image: linear-gradient(#000, #404040);
         animation: scroll-reveal linear both;
-        animation-timeline: view();
+        animation-timeline: scroll(root);
         animation-duration: 1ms;
-        animation-range: cover 10% cover 50%;
+        animation-range: contain 5.7% contain 20%;
     }
 }
 
 @keyframes text-appear {
     to {
-        color: #00000015;
-        transform: scale(1);
+        color: #00000020;
     }
 }
 
 @keyframes scroll-reveal {
     to {
         background-size: 100% 100%;
+    }
+}
+
+
+/* SKILLS */
+
+.skills {
+    margin-top: -100px !important;
+    display: flex;
+    width: 90%;  
+    padding-block: 150px;
+    padding-inline: 150px;
+    justify-content: center;
+    flex-wrap: wrap;  
+    gap: 50px;
+    row-gap: 50px;
+    margin: auto;
+
+    .skill {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        height: 420px;
+        min-width: 260px;
+        max-width: 300px;
+        border-radius: 5px;
+        box-shadow: inset #00000030 0px 0px 3px;
+        perspective: 1000px;
+        transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .skill:hover {
+        transform: scale(1.02);
+    }
+
+    .skill::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 3px;
+        background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
+            rgba(var(--accent-rgb), 0.1),transparent 35%);
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+    }
+    .skill::after {
+        position: absolute;
+        content: '';
+        margin-top: 0.15rem;
+        height: calc(100% - 0.3rem);
+		width: calc(100% - 0.3rem);
+        background-color: #fff;
+        border-radius: 3px;
+        transition: all 0.25s;
+    }
+}
+.skills:hover {
+    .skill {
+        background: radial-gradient(70rem circle at var(--xPos) var(--yPos),
+            rgba(var(--accent-rgb), 0.8),transparent 15%);
     }
 }
 
@@ -587,6 +651,7 @@ header {
             width: 62%;
             text-align: center;
             margin-inline: auto !important;
+
             .typewriter {
                 transform: scale(0.9);
             }
@@ -598,6 +663,10 @@ header {
             margin-top: -10px;
         }
     }
+
+    .typewriter:hover:has(h1:hover) {
+        transform: scale(0.9);
+  }
 
     .about-me {
         margin-block: 9%;
@@ -799,7 +868,12 @@ header {
     }
 
     .about-me {
-        padding-inline: 6% !important;
+        padding-inline: 7% !important;
+        text-align: left;
+    }
+
+    #about-me, #skills, #projects, #education, #contact {
+        scroll-margin-top: 150px;
     }
 }
 

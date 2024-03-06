@@ -49,7 +49,6 @@
                 sessionStorage.setItem('hasVisited', 'true');
             } else {
 
-
                 // Animation background
                 document.getElementById('body').classList.add('hide-bg');
             }
@@ -241,11 +240,12 @@
         </div>
         <!-- Picture and CV Button -->
         <div class="picture-cv">
-            <img alt="Profile Picture" src="https://placeholder.pics/svg/400x600">
+            <img class="picture" alt="Profile Picture" src="https://placeholder.pics/svg/400x600">
             <a class="btn" id="download-cv" href="extras\CV - Jorge López.pdf" target="_blank">Descargar CV</a>
         </div>
     </div>
 
+    <!-- About me -->
     <div class="about-me" id="about-me">
         <span class="text">
             Curioso por naturaleza, di mis primeros pasos en el mundo de la informática con tan solo 11 años.
@@ -256,6 +256,56 @@
             están en el corazón de mi trabajo, impulsando cada proyecto hacia el éxito.
         </span>
     </div>
+
+    <!-- Skills -->
+    <div class="skills" id="skills"> <!-- Add div glowing border mouse effect -->
+        <div class="skill">
+            <h2>Web</h2>
+            <div class="stack"></div>
+        </div>
+        <div class="skill">
+            <h2>Lenguajes</h2>
+            <div class="stack"></div>
+        </div>
+        <div class="skill">
+            <h2>Bases de Datos</h2>
+            <div class="stack"></div>
+        </div>
+        <!-- Extra skills -->
+        <div class="skill">
+            <h2>Soft Skills</h2>
+            <div class="stack"></div>
+        </div>
+        <div class="skill">
+            <h2>Herramientas</h2>
+            <div class="stack"></div>
+        </div>
+    </div>
+
+    <!-- JS - Skill Cards Border Effect-->
+    <script>
+        const skills = document.querySelectorAll(".skill");
+
+        document.addEventListener('mousemove', function (event) {
+            skills.forEach((skill) => {
+                const rect = skill.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                skill.style.setProperty("--xPos", `${x}px`);
+                skill.style.setProperty("--yPos", `${y}px`);
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            // Trigger mousemove event to update positions based on the last known mouse positions
+            const mouseMoveEvent = new MouseEvent("mousemove", {
+                clientX: lastMouseX,
+                clientY: lastMouseY
+            });
+            document.dispatchEvent(mouseMoveEvent);
+        });
+    </script>
 
     <!-- Call to Action -->
     <button class="calltoaction" tabindex="-1">
