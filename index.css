@@ -670,7 +670,7 @@ header {
 
     .about-me {
         margin-block: 9%;
-        padding-inline: 10%;
+        padding-inline: 9%;
     }
 }
 
@@ -822,6 +822,14 @@ header {
     
     ::-webkit-scrollbar {
         display: none;
+    }
+
+    .about-me {
+        animation-range: cover 0% cover 15% !important;
+    
+        .text {
+            animation-range: contain 5.7% contain 15% !important;
+        }
     }
 }
 
