@@ -3,18 +3,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Afacad:wght@400..700);
 
 /* - MAIN STYLES - */
-
-:root {
-  --body-bg: #f8f8f8;
-  --nav-bg: #c7dde7;
-  --accent: #2091eb;
-  --accent-rgb: 32, 145, 235;
-  --cursor-basic: url('assets/cursors/basic.png'), auto;
-  --cursor-click: url('assets/cursors/click.png'), auto;
-  --cursor-info: url('assets/cursors/info.png'), auto;
-}
   
-/* BASIC STYLES */
 html {
   font-family: Poppins;
   cursor: var(--cursor-basic);
@@ -72,13 +61,10 @@ html {
   display: block;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #258dddbb;
+  background-color: var(--accent);
   border-radius: 50px;
   border: var(--body-bg) solid 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background-color: #258ddd;
-}
 ::-webkit-scrollbar-track {
-  background-color: #f8f8f8;
+  background-color: var(--body-bg);
 }

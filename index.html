@@ -31,9 +31,9 @@
                 }, 4500); // Wait for 4.5 seconds before adding the class
 
                 // Header
-                document.getElementById('header').classList.add('header-show-hide');
+                document.getElementById('header').classList.add('icon-show-hide');
                 setTimeout(() => {
-                    document.getElementById('header').classList.remove('header-show-hide');
+                    document.getElementById('header').classList.remove('icon-show-hide');
                 }, 5000);
 
                 // Hero text delay
@@ -54,14 +54,35 @@
             }
         };
 
-
     </script>
 
-    <header id="header">
-        <svg class="logo" id="icon">
+    <!-- Page Icon -->
+    <div class="icon" id="header">
+        <svg class="iconsvg" id="icon">
             <use href="#logo"></use>
         </svg>
-    </header>
+    </div>
+
+    <!-- Theme Switch -->
+    <div class="theme-switch">
+        <div class="switch"></div>
+    </div>
+
+    <!-- JS - Switch Theme -->
+    <script>
+        const themeSwitch = document.querySelector('.theme-switch');
+        const body = document.getElementById('body');
+
+        function themeSwitchFunction() {
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+            } else {
+                body.classList.add('dark-theme');
+            }
+        }
+
+        themeSwitch.addEventListener('click', themeSwitchFunction);
+    </script>
 
     <div class="background"></div>
     <div id="cursor-follower"></div>
@@ -89,17 +110,6 @@
         });
         window.addEventListener('scroll', function () {
             updateFollowerPosition(); // Update the follower position on scroll
-        });
-
-        window.addEventListener('mousedown', function () {
-            follower.style.scale = '.5'
-            follower.style.background = '#00000099'
-            follower.style.filter = 'blur(20px)'
-        });
-        window.addEventListener('mouseup', function () {
-            follower.style.scale = '1'
-            follower.style.background = '#00000050'
-            follower.style.filter = 'blur(25px)'
         });
 
         function updateFollowerPosition() {
@@ -261,24 +271,42 @@
     <div class="skills" id="skills"> <!-- Add div glowing border mouse effect -->
         <div class="skill">
             <h2>Web</h2>
-            <div class="stack"></div>
+            <div class="stack web">
+                <span><img alt="HTML5" src="assets/icons/html5.svg">HTML</span>
+                <span><img alt="JS" src="assets/icons/js.svg">Javascript</span>
+                <span><img alt="CSS" src="assets/icons/css3.svg">CSS</span>
+                <span><img alt="TailwindCSS" src="assets/icons/tailwindcss.svg">Tailwind CSS</span>
+            </div>
         </div>
         <div class="skill">
-            <h2>Lenguajes</h2>
-            <div class="stack"></div>
+            <h2>Lenguajes</h2> <!-- Python, Java, Kotlin, Flutter, Dart -->
+            <div class="stack languages">
+                <span><img alt="Python" src="assets/icons/python.svg">Python</span>
+                <span><img alt="Java" src="assets/icons/java.svg">Java</span>
+                <span><img alt="Kotlin" src="assets/icons/kotlin.svg">Kotlin</span>
+                <span><img class="imgbigger" alt="Flutter" src="assets/icons/dart_flutter.svg">Dart y Flutter</span>
+            </div>
         </div>
         <div class="skill">
-            <h2>Bases de Datos</h2>
-            <div class="stack"></div>
+            <h2>Bases de Datos</h2> <!-- Firebase, Airtable, MySQL -->
+            <div class="stack db">
+                <span><img alt="MySQL" src="assets/icons/mysql.svg">MySQL</span>
+                <span><img alt="Firebase" src="assets/icons/firebase.svg">Firebase</span>
+                <span><img alt="Airtable" src="assets/icons/airtable.svg">Airtable</span>
+            </div>
         </div>
         <!-- Extra skills -->
         <div class="skill">
-            <h2>Soft Skills</h2>
-            <div class="stack"></div>
+            <h2>Herramientas</h2> <!-- Figma, Github, Cloudflare -->
+            <div class="stack tools">
+                <span><img alt="Figma" src="assets/icons/figma.svg">Figma</span>
+                <span><img alt="Cloudflare" src="assets/icons/cloudflare.svg">Cloudflare</span>
+                <span><img class="imgbigger" alt="GitHub" src="assets/icons/git_github.svg">Git y GitHub</span>
+            </div>
         </div>
         <div class="skill">
-            <h2>Herramientas</h2>
-            <div class="stack"></div>
+            <h2>Soft Skills</h2>
+            <div class="stack soft"></div>
         </div>
     </div>
 
