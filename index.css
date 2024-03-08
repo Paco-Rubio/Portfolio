@@ -570,7 +570,7 @@ body::before { /* Icon startup animation */
     padding-inline: 12vw;
     justify-content: center;
     flex-wrap: wrap;  
-    gap: 7vh;
+    gap: 50px;
     margin: auto;
 
     .skill {
@@ -1228,7 +1228,7 @@ body::before { /* Icon startup animation */
         }
         
         .text {
-            font-size: clamp(25px, 5vw, 27px) !important;
+            font-size: 27px !important;
             margin-bottom: 1%;
         }
 
