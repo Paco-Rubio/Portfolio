@@ -1233,7 +1233,7 @@ body::before { /* Icon startup animation */
         }
 
         .mt {
-            font-size: clamp(18px, 5vw, 23px) !important;
+            font-size: clamp(20px, 5vw, 23px) !important;
         }
     }
 }
