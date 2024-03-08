@@ -1216,7 +1216,7 @@ body::before { /* Icon startup animation */
 
     .studies {
 
-        padding-left: 3% !important;
+        padding-left: 0% !important;
         padding-right: 15% !important;
 
         * {
@@ -1262,6 +1262,7 @@ body::before { /* Icon startup animation */
     }
 
     .about-me {
+        font-size: clamp(23px, 1.9vw, 25px);
         padding-inline: 7% !important;
         text-align: left;
     }
