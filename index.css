@@ -1004,6 +1004,36 @@ body::before { /* Icon startup animation */
     }
 }
 
+@media (width < 1350px){
+
+    .studies {
+        padding-left: 3% !important;
+        padding-right: 15% !important;
+
+        * {
+            text-align: center;
+        }
+    }
+}
+
+@media (width < 1315px){
+
+    .education >.educationContainer > ul > li::before,
+    .certificates >.certificatesContainer > ul > li::before {
+        content: none;
+    }
+
+    .studies {
+        padding-left: 6% !important;
+        padding-right: 14% !important;
+    }
+
+    .text {
+        padding-left: 5% !important;
+        font-size: clamp(28px, 5vw, 35px) !important;
+    }
+}
+
 @media (width < 1080px){
 
     .typewriterContainer {
@@ -1178,6 +1208,34 @@ body::before { /* Icon startup animation */
 
     .picture-cv::before {
         content: none;
+    }
+}
+
+@media (width < 600px) {
+
+    .studies {
+
+        padding-left: 3% !important;
+        padding-right: 15% !important;
+
+        * {
+            text-align: center;
+            font-size: clamp(16px, 5vw, 22px) !important;
+            /* max-width: 200vw; */
+        }
+
+        li > span:last-child{
+            font-size: clamp(15px, 5vw, 20px) !important;
+        }
+        
+        .text {
+            font-size: clamp(25px, 5vw, 27px) !important;
+            margin-bottom: 1%;
+        }
+
+        .mt {
+            font-size: clamp(18px, 5vw, 23px) !important;
+        }
     }
 }
 
