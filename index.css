@@ -334,7 +334,7 @@ body::before { /* Icon startup animation */
     position: relative;
     width: 100%;
     font-family: Poppins;
-    font-size: clamp(35px, 2.6vw, 50px);    
+    font-size: clamp(35px, 2.7vw, 55px);    
     margin-top: 50px;
 }
 
@@ -485,7 +485,7 @@ body::before { /* Icon startup animation */
         content: '';
         width: 23px;
         height: 22px;
-        bottom: 6px;
+        bottom: 8px;
         opacity: 0;
         position: absolute;
         background-image: url(assets/icons/cv.svg);
@@ -513,6 +513,7 @@ body::before { /* Icon startup animation */
 }
 
 .picture-cv:hover::before {
+    opacity: 0.1;
     transform-origin: 0 1;
     transform: scale(0.95);
 }
@@ -572,7 +573,6 @@ body::before { /* Icon startup animation */
     flex-wrap: wrap;  
     gap: 7vh;
     margin: auto;
-    background: radial-gradient(rgb(var(--body-bg-rgb),0.7), rgb(var(--body-bg-rgb),0.5), transparent, transparent);
 
     .skill {
         z-index: 1;
@@ -633,7 +633,7 @@ body::before { /* Icon startup animation */
                 align-items: center;
                 text-align: center;
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 19px;
                 width: 103px;
                 gap: 5px;
                 cursor: var(--cursor-click);
@@ -647,6 +647,7 @@ body::before { /* Icon startup animation */
                 }
 
                 .imgbigger {
+                    margin-top: -7%;
                     width: 65px;
                     height: 65px;
                 }
@@ -726,8 +727,7 @@ body::before { /* Icon startup animation */
 /* EDUCATION */
 
 .studies {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-inline: 10vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -767,7 +767,7 @@ body::before { /* Icon startup animation */
             font-weight: 400;
 
             li {
-                font-size: 17.2px;
+                font-size: 21px;
                 margin-bottom: 5%;
                 list-style: none;
                 position: relative;
@@ -810,7 +810,7 @@ body::before { /* Icon startup animation */
                 margin-bottom: 5%;
                 list-style: none;
                 position: relative;
-                font-size: 17.2px;
+                font-size: 21px;
 
                 a {
                     cursor: var(--cursor-click);
@@ -859,7 +859,7 @@ body::before { /* Icon startup animation */
 .calltoaction {
 
     position: fixed;
-    font-family: Poppins;
+    font-family: Afacad;
     cursor: var(--cursor-click);
     -webkit-user-select: none;
     user-select: none;
