@@ -58,7 +58,7 @@ html {
 ::-webkit-scrollbar {
   width: 12px;
   height: 5px;
-  display: block;
+  display: none;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent);

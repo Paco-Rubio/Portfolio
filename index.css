@@ -7,6 +7,7 @@
   --primary-text-rgb: 0, 0, 0;
   --secondary-text: #353535;
   --accent: #2091eb;
+  --accent: #027fff; /* Different option? */
   --accent-rgb: 32, 145, 235;
   --cursor-basic: url('assets/cursors/basic.png'), auto;
   --cursor-click: url('assets/cursors/click.png'), auto;
@@ -33,7 +34,7 @@ body::before { /* Icon startup animation */
     width: 100vw;
     height: 100vh;
     background: var(--body-bg);
-    animation: startup 1s 5.2s forwards;
+    animation: startup .6s 3.1s forwards;
 }
 
 @keyframes startup {
@@ -275,11 +276,14 @@ body::before { /* Icon startup animation */
     }
 }
 
-#about-me, #proyects, #education, #contact {
-    scroll-margin-top: 100px;
+#about-me, #proyects, #contact {
+    scroll-margin-top: 85px;
 }
 #skills {
-    scroll-margin-top: -125px;
+    scroll-margin-top: -70px;
+}
+#education {
+    scroll-margin-top: 50px;
 }
 
 @keyframes sidebar-text {
@@ -463,6 +467,7 @@ body::before { /* Icon startup animation */
 
     img {
         width: max(260px, 80%);
+        height: max(390px, 80%);
         -webkit-user-select: none;
         user-select: none;
     }
@@ -491,7 +496,27 @@ body::before { /* Icon startup animation */
         opacity: 1;
         margin-left: -27px;
     }
+
+
+    
 }
+
+.picture-cv::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: rgb(var(--primary-text-rgb), 0.65) solid 3px;
+    width: max(260px, 80%);
+    height: max(390px, 55%);
+    inset: anchor(-7%) anchor(9%);
+    transition: .4s;
+}
+
+.picture-cv:hover::before {
+    transform-origin: 0 1;
+    transform: scale(0.95);
+}
+
 
 /* ABOUT ME */
 
@@ -502,7 +527,7 @@ body::before { /* Icon startup animation */
     font-size: clamp(23px, 1.9vw, 27px);
     font-weight: 500;
     width: 100%;
-    padding-inline: 15%;
+    padding-inline: 17vw;
     margin-block: 8%;
     color: rgb(var(--primary-text-rgb), 0);
     animation: text-appear linear both;
@@ -538,14 +563,14 @@ body::before { /* Icon startup animation */
 /* SKILLS */
 
 .skills {
-    margin-top: -100px !important;
+    margin-top: -140px !important;
     display: flex;
-    width: 90%;  
+    width: 100%;  
     padding-block: 150px;
-    padding-inline: 150px;
+    padding-inline: 12vw;
     justify-content: center;
     flex-wrap: wrap;  
-    gap: 40px;
+    gap: 7vh;
     margin: auto;
     background: radial-gradient(rgb(var(--body-bg-rgb),0.7), rgb(var(--body-bg-rgb),0.5), transparent, transparent);
 
@@ -558,35 +583,46 @@ body::before { /* Icon startup animation */
         justify-content: center;
         -webkit-user-select: none;
         user-select: none;
-        width: 30%;
-        height: 310px;
-        min-width: 260px;
-        max-width: 300px;
+        height: 260px;
+        width: 263px;
+        max-width: 263px;
         border-radius: 5px;
         box-shadow: inset rgb(var(--primary-text-rgb),0.05) 0px 0px 0px 10px;
-        transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
         h2 {
             /* outline: blue solid 3px; */
             text-align: center;
-            width: 100%;    
+            width: max-content;    
+            padding-left: 5.9%;
+            padding-right: 6.5%;
+            padding-block: 1.5%;
             height: min-content ;
             z-index: 2;
+            font-weight: 600;
+            font-size: 23px;
+            background: #fff;
+            position: absolute;
+            border: solid rgb(var(--primary-text-rgb),0.1) 3px;
+            border-radius: 6px;
+            margin-top: -8%;
+            transition: .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
         }
 
         .stack {
             /* outline: red solid 3px; */
             width: 100%;
             height: max-content;
-            margin-top: -4%;
+            margin-top: 20%;
             z-index: 2;
             display: flex;
             flex-wrap: wrap;
             -webkit-user-select: none;
             user-select: none;
-            gap: 20px;
-            row-gap: 15px;
-            padding-inline: 9%;  
+            gap: 5px;
+            row-gap: 20px;
+            padding-right: 7%;  
+            padding-left: 3.5%;  
             justify-content: space-evenly;
             align-items: center;
 
@@ -598,19 +634,26 @@ body::before { /* Icon startup animation */
                 text-align: center;
                 font-weight: 500;
                 font-size: 16px;
-                gap: 10px;
+                width: 103px;
+                gap: 5px;
                 cursor: var(--cursor-click);
+                transition: transform .2s ease-in-out;
 
                 img {
                     transition: transform .2s ease-in-out,
                                 filter .5s;
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
                 }
 
                 .imgbigger {
-                    width: 75px;
-                    height: 75px;
+                    width: 65px;
+                    height: 65px;
+                }
+
+                .imgspecial {
+                    width: 65px;
+                    height: 52px;
                 }
             }
             span::after {
@@ -624,9 +667,15 @@ body::before { /* Icon startup animation */
         }
     }
     .skill:hover {
-        transform: scale(1.02);
+
+        h2 {
+            transform: scale(0.99);
+            margin-top: -12%;
+        }
+
+        transform: scale(1.01);
         box-shadow: 
-        inset rgb(var(--primary-text-rgb),0.05) 0px 0px 0px 10px,
+        inset rgb(var(--primary-text-rgb),0.07) 0px 0px 0px 10px,
         rgb(var(--primary-text-rgb), 0.05) 5px 5px 10px 1px;
     }
     .skill:hover:has(span:hover) {
@@ -636,7 +685,7 @@ body::before { /* Icon startup animation */
         }
         span:hover > img {
             transition: transform .3s ease-in-out;
-            transform: scale(1.2);
+            transform: scale(1.1);
             filter: none;
         }
     }
@@ -666,12 +715,144 @@ body::before { /* Icon startup animation */
         transition: all 0.25s;
     }
 }
-.skills:hover {
+.skills:hover { /* Disabled card border effect following cursor */
     .skill {
-        background: radial-gradient(70rem circle at var(--xPos) var(--yPos),
+        background: radial-gradient(0rem circle at var(--xPos) var(--yPos),
             rgba(var(--accent-rgb), 0.8),transparent 15%);
     }
 }
+
+
+/* EDUCATION */
+
+.studies {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    * {
+        text-wrap: balance;
+        flex-grow: 1;
+    }
+
+    .text {
+        position: relative;
+        width: 100%;
+        padding-top: 2%;
+        font-size: clamp(24px, 3vw, 35px);
+        line-height: 0.5;
+        padding-left: 10%; 
+        font-weight: 600;
+    }
+}
+
+.education {
+    margin-left: 3%;
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+
+    .educationContainer {
+        width: 100%;
+        padding-inline: 8%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 5%;
+        column-gap: 6%;
+
+        ul {
+            font-weight: 400;
+
+            li {
+                font-size: 17.2px;
+                margin-bottom: 5%;
+                list-style: none;
+                position: relative;
+            }
+            li::before{
+                content:'';
+                position: absolute;
+                top: -0.4rem;
+                left: -4rem;
+                width: 60px;
+                height: 60px;
+                filter: drop-shadow(#00000080 2px 2px 1px);
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 60px;
+                background-image: url('https://cdn1.iconfinder.com/data/icons/linefillix-education/128/education_school-16-512.png');
+            }
+        }
+    }
+}
+
+.certificates {
+    width: 47%;
+    min-width: 500px;
+    display: flex;
+
+    .certificatesContainer {
+        width: 100%;
+        padding-inline: 8%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 5%;
+        column-gap: 6%;
+
+        ul {
+            font-weight: 400;
+
+            li {
+                margin-bottom: 5%;
+                list-style: none;
+                position: relative;
+                font-size: 17.2px;
+
+                a {
+                    cursor: var(--cursor-click);
+                    position: relative;
+                    text-decoration: none;
+                    color: var(--accent);
+                }
+                a:visited {
+                    color: #0d65bd !important;
+                }
+                a::after {
+                    position: absolute;
+                    content:'';
+                    width: 0;
+                    left: 0;
+                    bottom: 0;
+                    height: 1.5px;
+                    background: #173d4c;
+                    transition: width .3s ease-in-out;
+                }
+
+                a:hover::after {
+                    width: 100%;
+                }
+            }
+            li::before{
+                content:'';
+                position: absolute;
+                top: -0.4rem;
+                left: -3.4rem;
+                width: 60px;
+                height: 60px;
+                filter: drop-shadow(#00000080 2px 2px 1px);
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 40px;
+                background-image: url('https://cdn-icons-png.freepik.com/512/7238/7238706.png');
+            }
+        }
+    }
+}
+
 
 /* CALL TO ACTION */
 
@@ -954,7 +1135,7 @@ body::before { /* Icon startup animation */
     }     
     
     .typewriterContainer {
-        margin-top: 15% !important;
+        margin-top: 20% !important;
         width: 100% !important;
     }
     
@@ -993,6 +1174,10 @@ body::before { /* Icon startup animation */
 
     .calltoaction {
         display: none;
+    }
+
+    .picture-cv::before {
+        content: none;
     }
 }
 
