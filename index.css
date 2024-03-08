@@ -1260,7 +1260,7 @@ body::before { /* Icon startup animation */
     }
 
     .about-me {
-        font-size: clamp(14px, 1vw, 16px) !important;
+        font-size: clamp(12px, 1vw, 12px) !important;
         padding-inline: 7% !important;
         text-align: left;
     }
