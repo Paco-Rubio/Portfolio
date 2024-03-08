@@ -29,7 +29,7 @@ html {
 
 /* BUTTONS */
 .btn {
-  height: 38px;
+  height: max-content;
   width: max-content;
   color: #000;
   white-space: nowrap;
@@ -39,7 +39,7 @@ html {
   cursor: var(--cursor-click);
   border-radius: 8px;
   padding: 6px 14px;
-  font-size: clamp(13px, 1.5vw, 18px);
+  font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 500;
   text-decoration: none;
   transition: box-shadow .3s;
