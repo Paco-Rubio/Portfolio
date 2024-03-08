@@ -87,6 +87,7 @@ body::before { /* Icon startup animation */
 /* THEME SWITCH */
 
 .theme-switch {
+    display: none; /* TODO */
     width: 70px;
     height: 30px;
     background: var(--accent);
@@ -957,6 +958,10 @@ body::before { /* Icon startup animation */
 /* Hero and about-me */
 @media (width < 1400px){
 
+    .picture-cv::before {
+        content: none;
+    }
+
     .hero-picture {
         margin-top: 6%;
         flex-direction: column;
@@ -1204,10 +1209,6 @@ body::before { /* Icon startup animation */
 
     .calltoaction {
         display: none;
-    }
-
-    .picture-cv::before {
-        content: none;
     }
 }
 
