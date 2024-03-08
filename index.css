@@ -535,7 +535,7 @@ body::before { /* Icon startup animation */
     animation-duration: 1ms;
     animation-range: cover 0% cover 20%;
 
-    .text {
+    .ab-text {
         background-clip: text;
         background-repeat: no-repeat;
         background-size: 0% 100%;
@@ -1183,7 +1183,7 @@ body::before { /* Icon startup animation */
     .about-me {
         animation-range: cover 0% cover 15% !important;
     
-        .text {
+        .ab-text {
             animation-range: contain 5.7% contain 15% !important;
         }
     }
@@ -1260,7 +1260,7 @@ body::before { /* Icon startup animation */
     }
 
     .about-me {
-        font-size: 12px !important;
+        font-size: 17px !important;
         padding-inline: 7% !important;
         text-align: left;
     }
