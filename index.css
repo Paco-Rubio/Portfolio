@@ -4,6 +4,8 @@
     /* VARIABLES */
   --initial-delay: .2s;
     /* COLORS */
+  --white-black: #fff;
+  --white-black-rgb: 255, 255, 255;
   --body-bg: #f8f8f8;
   --body-bg-rgb: 248, 248, 248;
   --primary-text: #000;
@@ -696,6 +698,12 @@ body::before { /* Icon startup animation */
                     width: 65px;
                     height: 52px;
                 }
+
+                .soft {
+                    margin-top: -4.5%;
+                    width: 58px;
+                    height: 58px;
+                }
             }
             span::after {
                 position: absolute;
@@ -993,6 +1001,62 @@ body::before { /* Icon startup animation */
     }
     50% {transform: translateY(-9px);}
 }
+
+
+/* CONTACT */
+
+.contactContainer {
+
+    margin-top: 120px;
+    display: flex;
+    margin-inline: auto;
+    position: relative;
+    width: 70%;
+    height: 200px;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--white-black);
+    border: solid rgb(var(--primary-text-rgb), 0.07) 3px;
+    flex-wrap: wrap;
+
+    .contact {
+        width: 50%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactInfo {
+        padding-left: 20%;
+    }
+    .socials {
+        padding-right: 20%;
+    }
+}
+.contactContainer::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
+        rgba(var(--accent-rgb), 0.1),transparent 35%);
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}
+
+.contactContainer:hover {
+    .skill {
+        background: radial-gradient(70rem circle at var(--xPos) var(--yPos),
+            rgba(var(--accent-rgb), 0.8),transparent 15%);
+    }
+}
+
+
+/* MEDIA QUERIES */
 
 /* Hero and about-me */
 @media (width < 1400px){
