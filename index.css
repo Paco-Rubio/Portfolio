@@ -336,7 +336,7 @@ body::before { /* Icon startup animation */
 
 .hero {
 
-    animation: slide-right .6s var(--initial-delay) cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    animation: slide-right 1s var(--initial-delay) cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
     position: relative;
     opacity: 0;
     width: 100%;
@@ -523,14 +523,14 @@ body::before { /* Icon startup animation */
     content: '';
     position: absolute;
     z-index: -1;
-    animation: imgappear 2s var(--initial-delay) cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    animation: imgappear 1.5s var(--initial-delay) cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
     border: rgb(var(--primary-text-rgb), 0.1) solid 2px;
     width: max(260px, 80%);
     height: max(390px, 55%);
     inset: anchor(-7%) anchor(9%);
     transform-origin: 0 1;
-    transition: .4s;        
     opacity: 0;
+    transition: .4s;        
 }
 
 @keyframes imgappear {
@@ -543,10 +543,19 @@ body::before { /* Icon startup animation */
         transform: none;
     }
 }
+@keyframes imgdisappear {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    to {
+        opacity: 0.1;
+        transform: scale(0.95);
+    }
+}
 
 .picture-cv:hover::before {
-    opacity: 0.1;
-    transform: scale(0.95);
+    animation: imgdisappear .4s;
 }
 
 
@@ -556,7 +565,7 @@ body::before { /* Icon startup animation */
     text-wrap: balanced;
     font-family: Afacad;
     text-align: center;
-    font-size: clamp(23px, 1.9vw, 27px);
+    font-size: clamp(23px, 1.9vw, 25px);
     font-weight: 500;
     width: 100%;
     padding-inline: 17vw;
@@ -701,7 +710,6 @@ body::before { /* Icon startup animation */
     .skill:hover {
 
         h2 {
-            box-shadow: 0 2px 6px #5b5b5b1a, 0 1px 2px #6565651a;
             transform: scale(0.99);
             margin-top: -12%;
         }
