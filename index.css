@@ -27,7 +27,7 @@ body {
   margin: 0;
   padding: 8px;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   overflow-y: visible;
 }
 
