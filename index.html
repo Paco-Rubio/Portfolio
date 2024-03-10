@@ -145,7 +145,7 @@
         <a tabindex="-1" href="#about-me" class="dot" style="--content: 'Sobre mí';"></a>
         <a tabindex="-1" href="#skills" class="dot" style="--content: 'Habilidades';"></a>
         <a id="projectsDot" tabindex="-1" href="#projects" class="dot" style="--content: 'Proyectos';"></a>
-        <a id="projectsSmallerDot" tabindex="-1" href="#projectsSmaller" class="dot"
+        <a id="projectsSmallerDot" tabindex="-1" href="#projectsS" class="dot"
             style="--content: 'Proyectos'; display: none;"></a>
         <a tabindex="-1" href="#education" class="dot" style="--content: 'Educación';"></a>
         <a tabindex="-1" href="#contact" class="dot" style="--content: 'Contacto';"></a>
@@ -206,6 +206,8 @@
                     return 3;
                 case '#projects':
                     return 4;
+                case '#projectsS':
+                    return 4;
                 case '#education':
                     return 5;
                 case '#contact':
@@ -256,7 +258,7 @@
         </div>
         <!-- Picture and CV Button -->
         <div class="picture-cv" anchor="img">
-            <img class="picture" id="img" alt="Profile Picture" src="https://placeholder.pics/svg/400x600">
+            <img class="picture" id="img" alt="Profile Picture" src="assets/Perfil.png">
             <a class="btn" id="download-cv" href="extras\CV - Jorge López.pdf" target="_blank">Descargar CV</a>
         </div>
     </div>
@@ -360,27 +362,96 @@
                 <a href="#c" title="Propiedades CSS">3</a>
             </div>
             <div class="project shownProject" id="a">
-                <div class="pictures">1</div>
-                <div class="projectStack"></div>
-                <div class="links"></div>
-                <div class="description"></div>
+                <div class="pictures-title">
+                    <div class="pictures">
+                        <a title="Helping Hands" href="https://helping-hands.softr.app/" target="_hhands">
+                            <img class="projectPicture" src="assets/Helping Hands.png" alt="Helping Hands">
+                        </a>
+                    </div>
+                    <div class="title">
+                        Helping Hands &reg;
+                    </div>
+                </div>
+                <div class="projectStack">
+                    <img class="bigger" alt="Dart y Flutter" src="assets/icons/dart_flutter.svg">
+                    <img alt="Python" src="assets/icons/python.svg">
+                    <img alt="Airtable" src="assets/icons/airtable.svg">
+                </div>
+                <div class="links">
+                    <a href="https://helping-hands.softr.app/" target="_hhands" title="Página web">
+                        <img alt="Página web" src="assets/icons/link.png">
+                    </a>
+                </div>
+                <div class="description">
+                    <p><span>Aplicación multiplataforma para la oferta y búsqueda de ayuda.</span>
+                        <br><br class="br">
+                        Desde gestos sencillos como hacer compañía a quién lo necesite, hasta dar
+                        clases de apoyo de cualquier asignatura.
+                    </p>
+                </div>
             </div>
             <div class="project" id="b">
-                <div class="pictures">2</div>
-                <div class="projectStack"></div>
-                <div class="links"></div>
-                <div class="description"></div>
+                <div class="pictures-title">
+                    <div class="pictures">
+                        <a title="Helping Hands" href="https://lego-christmas.pages.dev/" target="_lego">
+                            <img class="projectPicture" src="assets/Lego.png" alt="Lego Navidad">
+                        </a>
+                    </div>
+                    <div class="title">
+                        Lego&reg; (Navidad)
+                    </div>
+                </div>
+                <div class="projectStack">
+                    <img alt="HTML5" src="assets/icons/html5.svg">
+                    <img class="bigger" alt="Git y Github" src="assets/icons/git_github.svg">
+                </div>
+                <div class="links">
+                    <a href="https://lego-christmas.pages.dev/" target="_lego" title="Página web">
+                        <img alt="Página web" src="assets/icons/link.png">
+                    </a>
+                </div>
+                <div class="description">
+                    <p><span>Clon de la página web de Lego&reg; (Navidad).</span>
+                        <br><br class="br">
+                        Página interactiva y dinámica que, a pesar de las limitaciones en cuanto al uso de CSS o JS,
+                        superó cualquier expectativa.
+                    </p>
+                </div>
             </div>
             <div class="project" id="c">
-                <div class="pictures">3</div>
-                <div class="projectStack"></div>
-                <div class="links"></div>
-                <div class="description"></div>
+                <div class="pictures-title">
+                    <div class="pictures">
+                        <a title="Propiedades CSS" href="https://css-properties.pages.dev/" target="_css">
+                            <img class="projectPicture special" src="assets/Propiedades CSS.png" alt="Propiedades CSS">
+                        </a>
+                    </div>
+                    <div class="title">
+                        Propiedades CSS
+                    </div>
+                </div>
+                <div class="projectStack">
+                    <img alt="HTML5" src="assets/icons/html5.svg">
+                    <img alt="CSS3" src="assets/icons/css3.svg">
+                    <img class="bigger" alt="Git y Github" src="assets/icons/git_github.svg">
+                </div>
+                <div class="links">
+                    <a href="https://css-properties.pages.dev/" target="_css" title="Página web">
+                        <img alt="Página web" src="assets/icons/link.png">
+                    </a>
+                </div>
+                <div class="description">
+                    <p><span>Página educativa sobre algunas propiedades CSS.</span>
+                        <br><br class="br">
+                        Completamente adaptable a cualquier pantalla, resolución y dispositivo.
+                        <br>
+                        Mi primer acercamiento a CSS.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
     <!-- Smaller -->
-    <div class="projectsSmallerContainer" id="projectsSmaller">
+    <div class="projectsSmallerContainer" id="projectsS">
         <div class="cards" id="cards">
             <!-- Project 1 -->
             <div class="card" id="card1">
@@ -438,9 +509,12 @@
             var offset;
             if (window.innerWidth > 1400) offset = 225;
             else {
-                if (window.innerWidth > 1080) offset = 180;
+                if (window.innerWidth > 1200) offset = 200;
                 else {
-                    offset = 165;
+                    if (window.innerWidth > 1100) offset = 185;
+                    else {
+                        offset = 170;
+                    }
                 }
             }
             return offset
@@ -684,7 +758,7 @@
         </symbol>
         <!-- Mail -->
         <symbol id="mail" viewBox="59.476 77.133 340.524 255.393" width="40">
-            <a href="mailto:lopezpueblajorge@gmail.com" target="_blank" tabindex="-1">
+            <a tabindex="1" href="mailto:lopezpueblajorge@gmail.com" target="_blank">
                 <rect x="60.476" y="110.597" width="339.524" height="173.842"
                     style="stroke: rgba(0, 0, 0, 0); fill: rgba(255, 0, 0, 0);"
                     transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)" />
@@ -695,7 +769,7 @@
         </symbol>
         <!-- Linkedin -->
         <symbol id="linkedin" viewBox="212.564 159.622 24 24" width="35">
-            <a href="https://www.linkedin.com/in/jorge-lopez-puebla/" target="_blank" tabindex="-1">
+            <a tabindex="1" href="https://www.linkedin.com/in/jorge-lopez-puebla/" target="_blank">
                 <path
                     d="M 231.564 159.622 L 217.564 159.622 C 214.803 159.622 212.564 161.861 212.564 164.622 L 212.564 178.622 C 212.564 181.383 214.803 183.622 217.564 183.622 L 231.564 183.622 C 234.326 183.622 236.564 181.383 236.564 178.622 L 236.564 164.622 C 236.564 161.861 234.326 159.622 231.564 159.622 Z M 220.564 178.622 L 217.564 178.622 L 217.564 167.622 L 220.564 167.622 L 220.564 178.622 Z M 219.064 166.354 C 218.098 166.354 217.314 165.564 217.314 164.59 C 217.314 163.616 218.098 162.826 219.064 162.826 C 220.03 162.826 220.814 163.616 220.814 164.59 C 220.814 165.564 220.031 166.354 219.064 166.354 Z M 232.564 178.622 L 229.564 178.622 L 229.564 173.018 C 229.564 169.65 225.564 169.905 225.564 173.018 L 225.564 178.622 L 222.564 178.622 L 222.564 167.622 L 225.564 167.622 L 225.564 169.387 C 226.96 166.801 232.564 166.61 232.564 171.863 L 232.564 178.622 Z"
                     fill="#111111" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, 0)" />
@@ -706,7 +780,7 @@
         </symbol>
         <!-- Github -->
         <symbol id="github" viewBox="212.484 123.326 100 99.875" width="37">
-            <a href="https://github.com/Jorge-lopz" target="_blank" tabindex="-1">
+            <a tabindex="1" href="https://github.com/Jorge-lopz" target="_blank">
                 <ellipse style="fill: rgba(0, 0, 0, 0); stroke: rgba(0, 0, 0, 0);" cx="262.895" cy="177.92" rx="45.316"
                     ry="45.281" transform="matrix(1, 0, 0, 1, 0, -1.4210854715202004e-14)" />
                 <path
