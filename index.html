@@ -144,7 +144,9 @@
         <a tabindex="-1" href="#" class="dot" style="--content: 'Inicio';"></a>
         <a tabindex="-1" href="#about-me" class="dot" style="--content: 'Sobre mí';"></a>
         <a tabindex="-1" href="#skills" class="dot" style="--content: 'Habilidades';"></a>
-        <a tabindex="-1" href="#projects" class="dot" style="--content: 'Proyectos';"></a>
+        <a id="projectsDot" tabindex="-1" href="#projects" class="dot" style="--content: 'Proyectos';"></a>
+        <a id="projectsSmallerDot" tabindex="-1" href="#projectsSmaller" class="dot"
+            style="--content: 'Proyectos'; display: none;"></a>
         <a tabindex="-1" href="#education" class="dot" style="--content: 'Educación';"></a>
         <a tabindex="-1" href="#contact" class="dot" style="--content: 'Contacto';"></a>
     </nav>
@@ -377,6 +379,53 @@
             </div>
         </div>
     </div>
+    <!-- Smaller -->
+    <div class="projectsSmallerContainer" id="projectsSmaller">
+        <div class="cards" id="cards">
+            <!-- Project 1 -->
+            <div class="card" id="card1">
+                <!-- Adds an icon to the top left corner of the project card-->
+                <img class="icon" src="assets/Helping Hands Icon.png" anchor="card1">
+                <div class="cardContent">
+                    <div>
+                        <h2>Helping Hands&reg;</h2> <!-- Title -->
+                        <p>Aplicación multiplataforma para la oferta y búsqueda de ayuda. <br><br>
+                            Desde gestos sencillos como hacer compañía a quién lo necesite, hasta dar
+                            clases de apoyo de cualquier asignatura.</p> <!-- Description -->
+                    </div>
+                    <a href="https://helping-hands.softr.app/" target="_hhands"><img src="assets/Helping Hands.png"></a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card" id="card2">
+                <img class="icon" src="assets/Lego Icon.png" anchor="card2">
+                <div class="cardContent">
+                    <div>
+                        <h2>Navidad Lego&reg;</h2>
+                        <p>Clon de la página web de Lego&reg; con múltiples modificaciones y añadidos para la
+                            temporada navideña y que le dan un toque personal.
+                        </p>
+                    </div>
+                    <a href="https://lego-christmas.pages.dev/" target="_lego"><img src="assets/Lego.png"
+                            width="70%"></a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card" id="card3">
+                <img class="icon" src="assets/Propiedades CSS Icon.png" anchor="card3">
+                <div class="cardContent">
+                    <div>
+                        <h2>Propiedades CSS</h2>
+                        <p>Página educativa sobre algunas propiedades CSS.
+                            Completamente adaptable a cualquier pantalla, resolución y dispositivo.
+                        </p>
+                    </div>
+                    <a href="https://css-properties.pages.dev/" target="_css"><img src="assets/Propiedades CSS.png"
+                            width="70%"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JS - Selector buttons -->
     <script>
@@ -384,22 +433,28 @@
         const projectsContainer = document.querySelector('.projectsContainer');
         const selected = document.querySelector('.selected');
         var shownProject = document.querySelector('.shownProject');
-        var dynamicOffset = calculateOffsetValue();
 
         function calculateOffsetValue() {
-            return window.innerWidth > 1400 ? 225 : 180;
+            var offset;
+            if (window.innerWidth > 1400) offset = 225;
+            else {
+                if (window.innerWidth > 1080) offset = 180;
+                else {
+                    offset = 165;
+                }
+            }
+            return offset
         }
 
         function changeScroll() {
             projectsContainer.scrollTo({
-                left: shownProject.offsetLeft - dynamicOffset,
+                left: shownProject.offsetLeft - calculateOffsetValue(),
                 behavior: 'smooth'
             });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
 
-            dynamicOffset = calculateOffsetValue();
             changeScroll();
 
             const projectsContainerContainer = document.querySelector('.projectsContainerContainer');
@@ -452,7 +507,6 @@
         });
 
         window.addEventListener('resize', () => {
-            dynamicOffset = calculateOffsetValue();
             changeScroll();
         });
 
