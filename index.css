@@ -40,13 +40,22 @@ body::before { /* Icon startup animation */
     width: 100vw;
     height: 100vh;
     background: var(--body-bg);
-    animation: startup .6s 4s forwards;
+    box-shadow: rgb(var(--primary-text-rgb), 0.7) 0px 5px 150px;
+    animation: startup 2s 3s forwards;
+    /* animation: startup2 2s 3.9s ease forwards; */
 }
 
 @keyframes startup {
     100% {
         background: transparent;
         visibility: hidden;
+    }
+}
+
+@keyframes startup2 {
+    100% {
+        left: -110vw;
+        box-shadow: rgb(var(--primary-text-rgb), 0) 0px 5px 20px;   
     }
 }
 
@@ -332,8 +341,8 @@ body::before { /* Icon startup animation */
 
 .heroContainer {
     width: 80%;
-    margin-left: 15%;
-    margin-right: -33%;
+    margin-left: 17.5%;
+    margin-right: -36.5%;
 }
 
 .hero {
@@ -505,13 +514,14 @@ body::before { /* Icon startup animation */
     #download-cv::before {
         content: '';
         width: 23px;
-        height: 22px;
+        height: 22.5px;
         bottom: 50%;
         transform: translateY(50%);
         opacity: 0;
         position: absolute;
         background-image: url(assets/icons/cv.svg);
         background-size: contain;
+        background-repeat: none;
         transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
     #download-cv:hover::before {
@@ -525,7 +535,7 @@ body::before { /* Icon startup animation */
     content: '';
     position: absolute;
     z-index: -1;
-    animation: imgappear 1.5s var(--initial-delay) cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    animation: imgappear 1.5s  cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
     border: rgb(var(--primary-text-rgb), 0.1) solid 2px;
     width: max(260px, 80%);
     height: max(390px, 55%);
@@ -810,6 +820,10 @@ body::before { /* Icon startup animation */
         flex-wrap: wrap;
         padding-right: 5%;
         column-gap: 6%;
+        
+        h1 {
+            margin-left: 3%;
+        }
 
         ul {
             font-weight: 400;
@@ -851,6 +865,10 @@ body::before { /* Icon startup animation */
         padding-right: 5%;
         column-gap: 6%;
 
+        h1 {
+            margin-left: 10%;
+        }
+
         ul {
             font-weight: 400;
 
@@ -875,7 +893,7 @@ body::before { /* Icon startup animation */
                     width: 0;
                     left: 0;
                     bottom: 0;
-                    height: 1.5px;
+                    height: 2px;
                     background: #173d4c;
                     transition: width .3s ease-in-out;
                 }
@@ -1011,8 +1029,9 @@ body::before { /* Icon startup animation */
     display: flex;
     margin-inline: auto;
     position: relative;
-    width: 70%;
-    height: 200px;
+    width: 40%;
+    height: 150px;
+    z-index: 1;
     justify-content: center;
     border-radius: 8px;
     background: var(--white-black);
@@ -1021,30 +1040,68 @@ body::before { /* Icon startup animation */
 
     .contact {
         width: 50%;
-        height: 200px;
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .contactIcon {
+            scale: 0.7;        
+        }
+
+        span {
+
+            position: absolute;
+            font-size: 19px;
+            font-weight: 500;
+
+            &:nth-of-type(1){
+                margin-top: -47px !important;
+                margin-left: -20px;
+            }   
+            &:nth-of-type(2){
+                margin-top: 40px !important;
+                margin-left: 0px;
+            }   
+        }
+        
+        span:nth-child(2){
+            margin-top: -81px;
+        }
     }
 
     .contactInfo {
-        padding-left: 20%;
+        display: flex;
+        flex-direction: column;
     }
     .socials {
-        padding-right: 20%;
+        gap: 0px;
+        padding-left: 7%;
+
+        .svg:nth-of-type(2){
+            margin-left: -50px;
+        }
+        .svg:nth-of-type(3){
+            margin-left: -60px;
+        }
+    }
+
+    .svg:focus-visible {
+        scale: 2;
     }
 }
 .contactContainer::before {
     content: '';
+    z-index: -1;
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 3px;
-    background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
+    background: radial-gradient(40rem circle at var(--xPos) var(--yPos),
         rgba(var(--accent-rgb), 0.1),transparent 35%);
-    opacity: 0;
+    opacity: 1;
     transition: all 0.15s ease-in-out;
 }
 
