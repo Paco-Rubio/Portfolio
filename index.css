@@ -1819,7 +1819,7 @@ body::before { /* Icon startup animation */
     }
 
     .socialsSmall {
-        display: flex;
+        display: flex !important;
         position: absolute;
         margin-block: auto;
         padding-left: 260px;
