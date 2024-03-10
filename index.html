@@ -348,12 +348,63 @@
     </script>
 
     <!-- Projects -->
-    <div class="projectsContainer" id="projects">
-        <div class="pictures box"></div>
-        <div class="projectStack box"></div>
-        <div class="links box"></div>
-        <div class="description box"></div>
+    <div class="projectsContainerContainer" id="projects">
+        <div class="projectsContainer">
+            <div class="selector">
+                <a href="#a" title="Helping Hands">1</a>
+                <br><br>
+                <a href="#b" title="Navidad Lego">2</a>
+                <br><br>
+                <a href="#c" title="Propiedades CSS">3</a>
+            </div>
+            <div class="project" id="a">
+                <div class="pictures">1</div>
+                <div class="projectStack"></div>
+                <div class="links"></div>
+                <div class="description"></div>
+            </div>
+            <div class="project" id="b">
+                <div class="pictures">2</div>
+                <div class="projectStack"></div>
+                <div class="links"></div>
+                <div class="description"></div>
+            </div>
+            <div class="project" id="c">
+                <div class="pictures">3</div>
+                <div class="projectStack"></div>
+                <div class="links"></div>
+                <div class="description"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- JS - Selector buttons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsContainer = document.querySelector('.projectsContainer');
+            const links = document.querySelectorAll('.selector a');
+
+            projectsContainer.scrollTo({
+                left: document.getElementById('a').offsetLeft - 250,
+                behavior: 'smooth'
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    const targetId = this.getAttribute('href').slice(1); // Get the target section ID
+                    const targetElement = document.getElementById(targetId);
+
+                    const scrollPosition = targetElement.offsetLeft - 250; // Get the left position of the target element
+
+                    projectsContainer.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 
     <!-- Studies -->
     <div class="studies" id="education">
