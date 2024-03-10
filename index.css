@@ -1058,10 +1058,11 @@ body::before { /* Icon startup animation */
 .projectsSmallerContainer {
     display: none;
     width: 70%;
-    margin-top: -25vh;
+    margin-top: -15vh;
     margin-bottom: 0%;
     margin-inline: auto;
     height: max-content;
+    position: relative;
 
     /* THE ACTUAL CARDS */
     .cards {
@@ -1194,6 +1195,18 @@ body::before { /* Icon startup animation */
             }
         }
     }
+}
+.projectsSmallerContainer::before {
+    content: 'Proyectos';
+    position: absolute;
+    width: max-content;
+    outline: red solid 5px;
+    height: 50px;
+    margin-top: 8%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-weight: 600;
 }
 
 @keyframes idle {
@@ -1908,6 +1921,10 @@ body::before { /* Icon startup animation */
             transform: scale(0.9);
             margin-left: 2.5vw;
         }
+    }
+
+    .projectsSmallerContainer::before {
+        margin-top: 14%;
     }
 }
 
