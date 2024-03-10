@@ -1881,6 +1881,10 @@ body::before { /* Icon startup animation */
             margin-left: 0.7vw;
         }
     }
+
+    .studies {
+        padding-left: 3.5% !important;
+    }
 }
 
 /* LOGO FILL COLORS */
