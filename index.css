@@ -1877,7 +1877,7 @@ body::before { /* Icon startup animation */
     .projectsSmallerContainer {
             
         a {
-            transform: scale(0.82);
+            transform: scale(0.75);
             margin-left: 0.7vw;
         }
     }
