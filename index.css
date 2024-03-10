@@ -1877,13 +1877,14 @@ body::before { /* Icon startup animation */
     .projectsSmallerContainer {
             
         a {
-            transform: scale(0.75);
+            transform: scale(0.77);
             margin-left: 0.7vw;
         }
     }
 
     .studies {
-        padding-left: 3.5% !important;
+        padding-left: 2.7% !important;
+        padding-right: 18% !important;
     }
 }
 
