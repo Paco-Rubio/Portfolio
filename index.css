@@ -11,6 +11,7 @@
   --primary-text: #000;
   --primary-text-rgb: 0, 0, 0;
   --secondary-text: #353535;
+  --sub-text: #5d5d5d;
   --accent: #2091eb;
   --accent: #027fff; /* Different option? */
   --accent-rgb: 32, 145, 235;
@@ -292,7 +293,7 @@ body::before { /* Icon startup animation */
     }
 }
 
-#about-me, #proyects, #contact {
+#about-me, #projects, #contact {
     scroll-margin-top: 85px;
 }
 #skills {
@@ -354,6 +355,26 @@ body::before { /* Icon startup animation */
     font-family: Poppins;
     font-size: clamp(35px, 2.7vw, 55px);    
     margin-top: 50px;
+
+    h2 {
+
+        font-size: clamp(22px, 2vw, 32px);
+        padding-left: 0.8%;
+        margin-bottom: -5%;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        font-family: Afacad;
+        color: var(--sub-text);
+    
+        .hand {
+            display: inline-block;
+            bottom: anchor(top);
+            left: anchor(25%);
+            transform-style: preserve-3d;
+            transform-origin: 100% 100%;
+            animation: greet 3s var(--initial-delay) infinite;
+        }
+    }
 }
 
 @keyframes slide-right {
@@ -364,6 +385,24 @@ body::before { /* Icon startup animation */
     to {
         margin-left: 0%;
         opacity: 1;
+    }
+}
+
+@keyframes greet {
+    from, 75%, to {
+        transform: rotateZ(10deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    30% {
+        transform: rotateZ(-9deg);
+    }
+    40% {
+        transform: rotateZ(8deg);
+    }
+    50% {
+        transform: rotateZ(-8deg);
     }
 }
 
@@ -782,9 +821,53 @@ body::before { /* Icon startup animation */
 }
 
 
+/* PROJECTS */
+
+.projectsContainer {
+
+    width: 100vw;
+    height: 550px;
+    padding-inline: 15%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+
+    .pictures {
+        min-width: 560px;
+        flex-grow: 3;
+        height: 70%;
+        width: 70%;
+    }
+    
+    .projectStack {
+        min-width: 100px;
+        flex-grow: 1;
+        height: 70%;
+        width: 22%;
+    }
+
+    .links {
+        flex-grow: 1;
+        height: 25%;
+        width: 17%;
+    }
+
+    .description {
+        flex-grow: 3;
+        height: 25%;
+        width: 75%;
+    }
+}
+
+
+
 /* EDUCATION */
 
 .studies {
+    margin-top: 100px;
     padding-inline: 10vw;
     display: flex;
     flex-wrap: wrap;
@@ -1085,10 +1168,6 @@ body::before { /* Icon startup animation */
             margin-left: -60px;
         }
     }
-
-    .svg:focus-visible {
-        scale: 2;
-    }
 }
 .contactContainer::before {
     content: '';
@@ -1200,6 +1279,29 @@ body::before { /* Icon startup animation */
 
     .typewriterContainer {
         width: 77% !important;
+    }
+
+    .projectsContainer {
+
+        margin-bottom: 250px;
+
+        .pictures {
+            order: -1;
+            min-width: 263px;
+        }
+        .description {
+            order: 1;
+        }
+        .projectStack {
+            order: 2;
+            height: 70px;
+            width: 80%;
+        }
+        .links {
+            order: 3;
+            height: 70px;
+            width: 15%
+        }
     }
 }
 
@@ -1373,8 +1475,8 @@ body::before { /* Icon startup animation */
 
     .studies {
 
-        padding-left: 0% !important;
-        padding-right: 16.5% !important;
+        padding-left: 7% !important;
+        padding-right: 16% !important;
 
         * {
             text-align: center;

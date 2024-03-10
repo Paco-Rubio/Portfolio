@@ -236,7 +236,8 @@
         <!-- Hero -->
         <div class="heroContainer">
             <div class="hero">
-                <h1 style="font-weight: 700; color: #000;">Soy Jorge,</h1>
+                <h2>Hola <span class="hand">👋🏼</span></h2>
+                <h1 id="name" style="font-weight: 700; color: #000;">Soy Jorge,</h1>
             </div>
             <div class="typewriterContainer" id="typewriterContainer">
                 <div class="typewriter">
@@ -347,7 +348,12 @@
     </script>
 
     <!-- Projects -->
-    <div class="projectsContainer"></div>
+    <div class="projectsContainer" id="projects">
+        <div class="pictures box"></div>
+        <div class="projectStack box"></div>
+        <div class="links box"></div>
+        <div class="description box"></div>
+    </div>
 
     <!-- Studies -->
     <div class="studies" id="education">
@@ -412,19 +418,19 @@
         </div>
 
         <div class="contact socials">
-            <svg class="svg">
+            <svg>
                 <use href="#mail"></use>
             </svg>
-            <svg class="svg">
+            <svg>
                 <use href="#linkedin"></use>
             </svg>
-            <svg class="svg">
+            <svg>
                 <use href="#github"></use>
             </svg>
         </div>
 
-        <!-- Smaller Screen Version -->
-        <div class="contactSmall socialsSmall">
+        <!-- Smaller Screen Version  -->
+        <div class="contactSmall socialsSmall" style="display: none;">
             <svg class="SmallContactsvg">
                 <use href="#mail"></use>
             </svg>
