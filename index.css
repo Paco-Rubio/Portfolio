@@ -293,11 +293,14 @@ body::before { /* Icon startup animation */
     }
 }
 
-#about-me, #projects, #contact {
+#about-me, #contact {
     scroll-margin-top: 85px;
 }
 #skills {
     scroll-margin-top: -70px;
+}
+#projects{
+    scroll-margin-top: 0px;
 }
 #education {
     scroll-margin-top: 50px;
@@ -826,19 +829,22 @@ body::before { /* Icon startup animation */
 .projectsContainer {
 
     width: 100vw;
-    height: 555px;
+    height: 640px;
+    margin-top: -90px;
+    padding-top: 90px;
     padding-inline: 15%;
     position: relative;
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
-    gap: 30px;
+    gap: 100px;
     margin-left: -6vw;
 
     .selector {
+        border-radius: 50px;
         position: sticky;
-        width: 100px;
+        width: 20px;
         height: 250px;
         left: 0%;
         top: 50%;
@@ -846,6 +852,7 @@ body::before { /* Icon startup animation */
         line-height: 50px;
 
         a {
+            cursor: var(--cursor-click);
             position: relative;
             color: #fff;
             text-decoration: none;
@@ -855,20 +862,27 @@ body::before { /* Icon startup animation */
         a::before {
             content: '';
             z-index: -1;
-            background: var(--accent);
+            background: rgb(var(--accent-rgb), 0.75);
             width: 50px;
             height: 50px;
             border-radius: 50%;
             position: absolute;
             margin-left: -87%;
+            transform: scale(0.9);
+            transition: .3s;
+        }
+
+        .selected::before {
+            transform: scale(1.1);
+            background: var(--accent);
         }
     }
 
     .project {
 
         display: flex;
-        width: 100vw;
         min-width: 80vw;
+        max-width: 80vw;
         height: 99%;
         padding-inline: 15%;
         flex-wrap: wrap;
@@ -1286,6 +1300,21 @@ body::before { /* Icon startup animation */
     .contactContainer {
         width: 100%;
     }
+
+    .projectsContainerContainer {
+
+        .selector {
+            position: sticky;
+            left: 57.5%;
+            top: 0;
+            width: 250px;
+            height: 20px;
+            transform: translateX(-50%) translateY(-400%);
+            display: flex;
+            flex-direction: row;
+            gap: 35px;
+        }
+    }
 }
 
 @media (width < 1250px){
@@ -1338,26 +1367,26 @@ body::before { /* Icon startup animation */
         .pictures {
             order: -1;
             min-width: 263px;
-        }
-        .description {
-            order: 1;
+            height: 40% !important;
         }
         .projectStack {
-            order: 2;
+            background: red;
             flex-grow: 1;
-            max-width: 100vw;
-            height: 70px;
-            width: 50%;
+            height: 40%;
+            width: 10% !important;
+        }
+        .description {
         }
         .links {
             flex-grow: 0;
-            order: 3;
             height: 70px;
             width: 30%
         }
     }
 }
 
+
+/TODO -> Aquí tengo que hacer que le scroll de los proyectos vaya más a la izquierda (<180)
 @media (width < 1080px){
 
     .typewriterContainer {

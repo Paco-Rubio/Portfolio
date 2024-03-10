@@ -351,13 +351,13 @@
     <div class="projectsContainerContainer" id="projects">
         <div class="projectsContainer">
             <div class="selector">
-                <a href="#a" title="Helping Hands">1</a>
+                <a class="selected" href="#a" title="Helping Hands">1</a>
                 <br><br>
                 <a href="#b" title="Navidad Lego">2</a>
                 <br><br>
                 <a href="#c" title="Propiedades CSS">3</a>
             </div>
-            <div class="project" id="a">
+            <div class="project shownProject" id="a">
                 <div class="pictures">1</div>
                 <div class="projectStack"></div>
                 <div class="links"></div>
@@ -380,30 +380,82 @@
 
     <!-- JS - Selector buttons -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectsContainer = document.querySelector('.projectsContainer');
-            const links = document.querySelectorAll('.selector a');
 
+        const projectsContainer = document.querySelector('.projectsContainer');
+        const selected = document.querySelector('.selected');
+        var shownProject = document.querySelector('.shownProject');
+        var dynamicOffset = calculateOffsetValue();
+
+        function calculateOffsetValue() {
+            return window.innerWidth > 1400 ? 225 : 180;
+        }
+
+        function changeScroll() {
             projectsContainer.scrollTo({
-                left: document.getElementById('a').offsetLeft - 250,
+                left: shownProject.offsetLeft - dynamicOffset,
                 behavior: 'smooth'
             });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            dynamicOffset = calculateOffsetValue();
+            changeScroll();
+
+            const projectsContainerContainer = document.querySelector('.projectsContainerContainer');
+            const links = document.querySelectorAll('.selector a');
+
+            // Distinguish between horizontal and vertical touch movements
+            let touchStartX = 0;
+            projectsContainerContainer.addEventListener('touchstart', function (e) {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: false });
+            projectsContainerContainer.addEventListener('touchmove', function (e) {
+                const touchEndX = e.changedTouches[0].clientX;
+                if (Math.abs(touchEndX - touchStartX) > Math.abs(e.changedTouches[0].clientY - e.touches[0].clientY)) {
+                    // This is a horizontal movement
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            // Disable mouse wheel horizontal scrolling within the div
+            projectsContainerContainer.addEventListener('wheel', function (e) {
+                if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                    // This is predominantly a horizontal scroll
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            // Disable middle mouse button scrolling within the div
+            projectsContainerContainer.addEventListener('mousedown', function (e) {
+                if (e.button === 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
 
             links.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault(); // Prevent default anchor behavior
+
+                    links.forEach(link => {
+                        link.classList.remove('selected');
+                    });
+
+                    this.classList.add('selected');
+
                     const targetId = this.getAttribute('href').slice(1); // Get the target section ID
                     const targetElement = document.getElementById(targetId);
 
-                    const scrollPosition = targetElement.offsetLeft - 250; // Get the left position of the target element
+                    shownProject = targetElement;
+                    changeScroll();
 
-                    projectsContainer.scrollTo({
-                        left: scrollPosition,
-                        behavior: 'smooth'
-                    });
                 });
             });
         });
+
+        window.addEventListener('resize', () => {
+            dynamicOffset = calculateOffsetValue();
+            changeScroll();
+        });
+
     </script>
 
     <!-- Studies -->
