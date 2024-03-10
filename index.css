@@ -1105,13 +1105,6 @@ body::before { /* Icon startup animation */
     transition: all 0.15s ease-in-out;
 }
 
-.contactContainer:hover {
-    .skill {
-        background: radial-gradient(70rem circle at var(--xPos) var(--yPos),
-            rgba(var(--accent-rgb), 0.8),transparent 15%);
-    }
-}
-
 
 /* MEDIA QUERIES */
 
@@ -1159,6 +1152,10 @@ body::before { /* Icon startup animation */
     .about-me {
         margin-block: 9%;
         padding-inline: 9%;
+    }
+
+    .contactContainer {
+        width: 100%;
     }
 }
 
@@ -1396,6 +1393,34 @@ body::before { /* Icon startup animation */
 
         .mt {
             font-size: clamp(20px, 5vw, 23px) !important;
+        }
+    }
+
+    .contactContainer {
+        height: 220px;
+        margin-bottom: -50px;
+    }
+
+    .contactInfo {
+        padding-left: 10% !important;
+    }
+
+    .socials {
+        display: none !important;
+    }
+
+    .socialsSmall {
+        display: flex;
+        position: absolute;
+        margin-block: auto;
+        padding-left: 260px;
+        margin-top: 80px;
+ 
+        .SmallContactsvg:nth-of-type(2){
+            margin-left: -370px;
+        }
+        .SmallContactsvg:nth-of-type(3){
+            margin-left: -370px;
         }
     }
 }
