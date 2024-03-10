@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -141,14 +141,14 @@
 
     <!-- Sidebar -->
     <nav class="dot-controls" id="dot-controls">
-        <a tabindex="-1" href="#" class="dot" style="--content: 'Inicio';"></a>
-        <a tabindex="-1" href="#about-me" class="dot" style="--content: 'Sobre mí';"></a>
-        <a tabindex="-1" href="#skills" class="dot" style="--content: 'Habilidades';"></a>
-        <a id="projectsDot" tabindex="-1" href="#projects" class="dot" style="--content: 'Proyectos';"></a>
+        <a tabindex="-1" href="#" class="dot" style="--content: 'Home';"></a>
+        <a tabindex="-1" href="#about-me" class="dot" style="--content: 'Über mich';"></a>
+        <a tabindex="-1" href="#skills" class="dot" style="--content: 'Skills';"></a>
+        <a id="projectsDot" tabindex="-1" href="#projects" class="dot" style="--content: 'Projekte';"></a>
         <a id="projectsSmallerDot" tabindex="-1" href="#projectsS" class="dot"
-            style="--content: 'Proyectos'; display: none;"></a>
-        <a tabindex="-1" href="#education" class="dot" style="--content: 'Educación';"></a>
-        <a tabindex="-1" href="#contact" class="dot" style="--content: 'Contacto';"></a>
+            style="--content: 'Projekte'; display: none;"></a>
+        <a tabindex="-1" href="#education" class="dot" style="--content: 'Bildung';"></a>
+        <a tabindex="-1" href="#contact" class="dot" style="--content: 'Kontakt';"></a>
     </nav>
 
     <!-- JS - Sidebar -->
@@ -240,49 +240,49 @@
         <!-- Hero -->
         <div class="heroContainer">
             <div class="hero">
-                <h2>Hola <span class="hand">👋🏼</span></h2>
-                <h1 id="name" style="font-weight: 700; color: #000;">Soy Jorge,</h1>
+                <h2>Hallo <span class="hand">👋🏼</span></h2>
+                <h1 id="name" style="font-weight: 700; color: #000;">Ich bin Jorge,</h1>
             </div>
             <div class="typewriterContainer" id="typewriterContainer">
                 <div class="typewriter">
-                    <h1 style="--steps: 13; --characters: 14"> desarrollador</h1>
-                    <h1 style="--steps: 13; --characters: 14"> diseñador web</h1>
-                    <h1 id="especial" style="--steps: 11; --characters: 12"> programador</h1>
+                    <h1 style="--steps: 10; --characters: 11"> entwickler</h1>
+                    <h1 style="--steps: 11; --characters: 12"> webdesigner</h1>
+                    <h1 id="especial" style="--steps: 13; --characters: 14"> programmierer</h1>
                 </div>
                 <div class="typewriterSimpler">
-                    <h1> desarrollador</h1>
-                    <h1> diseñador web</h1>
-                    <h1 id="especial"> programador</h1>
+                    <h1> entwickler</h1>
+                    <h1> webdesigner</h1>
+                    <h1 id="especial"> programmierer</h1>
                 </div>
             </div>
         </div>
         <!-- Picture and CV Button -->
         <div class="picture-cv" anchor="img">
             <img class="picture" id="img" alt="Profile Picture" src="assets/Perfil.png">
-            <a class="btn" id="download-cv" href="extras\CV - Jorge López.pdf" target="_blank">Descargar CV</a>
+            <a class="btn" id="download-cv" href="extras\CV - Jorge López.pdf" target="_blank">CV herunterladen</a>
         </div>
     </div>
 
     <!-- Language Button -->
     <div class="languageButton">
-        <img alt="Español" src="assets/icons/spanish.png">
+        <a href="index.html">
+            <img alt="Spanisch" src="assets/icons/spanish.png" title="Spanisch">
+        </a>
         <a href="indexEn.html">
-            <img alt="Inglés" src="assets/icons/english.png" title="Inglés">
+            <img alt="Englisch" src="assets/icons/english.png" title="Englisch">
         </a>
-        <a href="indexDe.html">
-            <img alt="Alemán" src="assets/icons/german.png" title="Alemán">
-        </a>
+        <img alt="Deutsch" src="assets/icons/german.png">
     </div>
 
     <!-- About me -->
     <div class="about-me" id="about-me">
         <span class="ab-text">
-            Curioso por naturaleza, di mis primeros pasos en el mundo de la informática con tan solo 11 años.
-            Desde entonces, siempre he tenido claro que quería dedicar mi vida a la tecnología.
+            Von Natur aus neugierig, machte ich meine ersten Schritte in der Welt der Informatik, als ich erst 11 Jahre
+            alt war. Seitdem war für mich immer klar, dass ich mein Leben der Technologie widmen wollte.
             <br><br style="margin-bottom: -10px;">
-            Comprometido y dedicado, mi enfoque no solo se centra en cumplir con las expectativas, sino en
-            superarlas, aportando soluciones creativas y eficientes. La colaboración en equipo y la innovación
-            están en el corazón de mi trabajo, impulsando cada proyecto hacia el éxito.
+            Mit Engagement und Hingabe versuche ich nicht nur, die Erwartungen zu erfüllen, sondern sie zu übertreffen
+            und kreative und effiziente Lösungen anzubieten. Teamarbeit und Innovation sind das Herzstück meiner Arbeit
+            und treiben jedes Projekt zum Erfolg.
         </span>
     </div>
 
@@ -298,7 +298,7 @@
             </div>
         </div>
         <div class="skill">
-            <h2>Bases de Datos</h2> <!-- Firebase, Airtable, MySQL -->
+            <h2>Datenbanken</h2> <!-- Firebase, Airtable, MySQL -->
             <div class="stack db" style="padding-inline: 7% !important;">
                 <span><img alt="MySQL" src="assets/icons/mysql.svg">MySQL</span>
                 <span><img alt="Firebase" src="assets/icons/firebase.svg">Firebase</span>
@@ -306,33 +306,33 @@
             </div>
         </div>
         <div class="skill">
-            <h2>Lenguajes</h2> <!-- Python, Java, Kotlin, Flutter, Dart -->
+            <h2>Sprachen</h2> <!-- Python, Java, Kotlin, Flutter, Dart -->
             <div class="stack languages">
                 <span><img alt="Python" src="assets/icons/python.svg">Python</span>
                 <span><img alt="Java" src="assets/icons/java.svg">Java</span>
                 <span><img alt="Kotlin" src="assets/icons/kotlin.svg">Kotlin</span>
-                <span><img class="imgspecial" alt="Dart y Flutter" src="assets/icons/dart_flutter.svg">Dart y
+                <span><img class="imgspecial" alt="Dart & Flutter" src="assets/icons/dart_flutter.svg">Dart &
                     Flutter</span>
             </div>
         </div>
         <!-- Extra skills -->
         <div class="skill">
-            <h2>Herramientas</h2> <!-- Figma, Github, Cloudflare -->
+            <h2>Tools</h2> <!-- Figma, Github, Cloudflare -->
             <div class="stack tools" style="padding-inline: 7% !important;">
                 <span><img alt="Figma" src="assets/icons/figma.svg">Figma</span>
                 <span><img alt="Cloudflare" src="assets/icons/cloudflare.svg">Cloudflare</span>
-                <span><img class="imgbigger" alt="Git y GitHub" src="assets/icons/git_github.svg">Git y
+                <span><img class="imgbigger" alt="Git & GitHub" src="assets/icons/git_github.svg">Git &
                     GitHub</span>
             </div>
         </div>
         <div class="skill">
             <h2>Soft Skills</h2>
             <div class="stack soft" style="line-height: 1; padding-inline: 7% !important; margin-top: 18% !important;">
-                <span><img class="soft" alt="Trabajo en equipo" src="assets/icons/trabajo_equipo.svg">Trabajo en
-                    equipo</span>
-                <span><img class="soft" alt="Pensamiento crítico" src="assets/icons/pensamiento_critico.svg">Pensamiento
-                    crítico</span>
-                <span><img class="soft" alt="Comunicación" src="assets/icons/comunicacion.svg">Comunicación</span>
+                <span><img class="soft" alt="Teamarbeit" src="assets/icons/trabajo_equipo.svg">Teamarbeit</span>
+                <span><img class="soft" alt="Kritisches
+                    Denken" src="assets/icons/pensamiento_critico.svg">Kritisches
+                    Denken</span>
+                <span><img class="soft" alt="Kommunikation" src="assets/icons/comunicacion.svg">Kommunikation</span>
 
             </div>
         </div>
@@ -369,9 +369,9 @@
             <div class="selector">
                 <a class="selected" href="#a" title="Helping Hands">1</a>
                 <br><br>
-                <a href="#b" title="Navidad Lego">2</a>
+                <a href="#b" title="Lego (Weihnachten)">2</a>
                 <br><br>
-                <a href="#c" title="Propiedades CSS">3</a>
+                <a href="#c" title="CSS Eigenschaften">3</a>
             </div>
             <div class="project shownProject" id="a">
                 <div class="pictures-title">
@@ -385,20 +385,20 @@
                     </div>
                 </div>
                 <div class="projectStack">
-                    <img class="bigger" alt="Dart y Flutter" src="assets/icons/dart_flutter.svg">
+                    <img class="bigger" alt="Dart & Flutter" src="assets/icons/dart_flutter.svg">
                     <img alt="Python" src="assets/icons/python.svg">
                     <img alt="Airtable" src="assets/icons/airtable.svg">
                 </div>
                 <div class="links">
-                    <a href="https://helping-hands.softr.app/" target="_hhands" title="Página web">
-                        <img alt="Página web" src="assets/icons/link.png">
+                    <a href="https://helping-hands.softr.app/" target="_hhands" title="Webpage">
+                        <img alt="Webpage" src="assets/icons/link.png">
                     </a>
                 </div>
                 <div class="description">
-                    <p><span>Aplicación multiplataforma para la oferta y búsqueda de ayuda.</span>
+                    <p><span>Multiplattform-Anwendung zum Anbieten und Finden von Hilfe.</span>
                         <br><br class="br">
-                        Desde gestos sencillos como hacer compañía a quién lo necesite, hasta dar
-                        clases de apoyo de cualquier asignatura.
+                        Von einfachen Gesten, wie z. B. denjenigen Gesellschaft zu leisten, die sie brauchen, bis hin
+                        zum Unterricht in einem beliebigen Fach.
                     </p>
                 </div>
             </div>
@@ -406,57 +406,57 @@
                 <div class="pictures-title">
                     <div class="pictures">
                         <a title="Helping Hands" href="https://lego-christmas.pages.dev/" target="_lego">
-                            <img class="projectPicture" src="assets/Lego.png" alt="Lego Navidad">
+                            <img class="projectPicture" src="assets/Lego.png" alt="Lego ()Weihnachten)">
                         </a>
                     </div>
                     <div class="title">
-                        Lego&reg; (Navidad)
+                        Lego&reg; (Weihnachten)
                     </div>
                 </div>
                 <div class="projectStack">
                     <img alt="HTML5" src="assets/icons/html5.svg">
-                    <img class="bigger" alt="Git y Github" src="assets/icons/git_github.svg">
+                    <img class="bigger" alt="Git & Github" src="assets/icons/git_github.svg">
                 </div>
                 <div class="links">
-                    <a href="https://lego-christmas.pages.dev/" target="_lego" title="Página web">
-                        <img alt="Página web" src="assets/icons/link.png">
+                    <a href="https://lego-christmas.pages.dev/" target="_lego" title="Webpage">
+                        <img alt="Webpage" src="assets/icons/link.png">
                     </a>
                 </div>
                 <div class="description">
-                    <p><span>Clon de la página web de Lego&reg; (Navidad).</span>
+                    <p><span>Klon der Lego&reg;-Website (Weihnachten).</span>
                         <br><br class="br">
-                        Página interactiva y dinámica que, a pesar de las limitaciones en cuanto al uso de CSS o JS,
-                        superó cualquier expectativa.
+                        Interaktive und dynamische Seite, die trotz der Einschränkungen bei der Nutzung von CSS oder JS
+                        alle Erwartungen übertroffen hat.
                     </p>
                 </div>
             </div>
             <div class="project" id="c">
                 <div class="pictures-title">
                     <div class="pictures">
-                        <a title="Propiedades CSS" href="https://css-properties.pages.dev/" target="_css">
-                            <img class="projectPicture special" src="assets/Propiedades CSS.png" alt="Propiedades CSS">
+                        <a title="CSS Eigenschaften" href="https://css-properties.pages.dev/" target="_css">
+                            <img class="projectPicture special" src="assets/Propiedades CSS.png"
+                                alt="CSS Eigenschaften">
                         </a>
                     </div>
                     <div class="title">
-                        Propiedades CSS
+                        CSS-Eigenschaften
                     </div>
                 </div>
                 <div class="projectStack">
                     <img alt="HTML5" src="assets/icons/html5.svg">
                     <img alt="CSS3" src="assets/icons/css3.svg">
-                    <img class="bigger" alt="Git y Github" src="assets/icons/git_github.svg">
+                    <img class="bigger" alt="Git & Github" src="assets/icons/git_github.svg">
                 </div>
                 <div class="links">
-                    <a href="https://css-properties.pages.dev/" target="_css" title="Página web">
-                        <img alt="Página web" src="assets/icons/link.png">
+                    <a href="https://css-properties.pages.dev/" target="_css" title="Webpage">
+                        <img alt="Webpage" src="assets/icons/link.png">
                     </a>
                 </div>
                 <div class="description">
-                    <p><span>Página educativa sobre algunas propiedades CSS.</span>
+                    <p><span>Lehrreiche Seite über einige CSS-Eigenschaften.</span>
                         <br><br class="br">
-                        Completamente adaptable a cualquier pantalla, resolución y dispositivo.
-                        <br>
-                        Mi primer acercamiento a CSS.
+                        Komplett flexibel an jeden Bildschirm, jede Resolution und jedes Device anpassbar.
+                        <br>Das war mein erster Zugang zu CSS.
                     </p>
                 </div>
             </div>
@@ -467,26 +467,29 @@
         <div class="cards" id="cards">
             <!-- Project 1 -->
             <div class="card" id="card1">
-                <!-- Adds an icon to the top left corner of the project card-->
-                <img class="icon" src="assets/Helping Hands Icon.png" anchor="card1">
                 <div class="cardContent">
                     <div>
                         <h2>Helping Hands&reg;</h2> <!-- Title -->
-                        <p>Aplicación multiplataforma para la oferta y búsqueda de ayuda. <br><br>
-                            Desde gestos sencillos como hacer compañía a quién lo necesite, hasta dar
-                            clases de apoyo de cualquier asignatura.</p> <!-- Description -->
+                        <p>Multiplattform-Anwendung zum Anbieten und Finden von Hilfe.
+                            <br>
+                            Von einfachen Gesten, wie z. B. denjenigen Gesellschaft zu leisten, die sie brauchen, bis
+                            hin
+                            zum Unterricht in einem beliebigen Fach.
+                        </p> <!-- Description -->
                     </div>
                     <a href="https://helping-hands.softr.app/" target="_hhands"><img src="assets/Helping Hands.png"></a>
                 </div>
             </div>
             <!-- Project 2 -->
             <div class="card" id="card2">
-                <img class="icon" src="assets/Lego Icon.png" anchor="card2">
                 <div class="cardContent">
                     <div>
-                        <h2>Navidad Lego&reg;</h2>
-                        <p>Clon de la página web de Lego&reg; con múltiples modificaciones y añadidos para la
-                            temporada navideña y que le dan un toque personal.
+                        <h2>Lego&reg; (Weihnachten)</h2>
+                        <p>Klon der Lego&reg;-Website (Weihnachten).
+                            <br>
+                            Interaktive und dynamische Seite, die trotz der Einschränkungen bei der Nutzung von CSS oder
+                            JS
+                            alle Erwartungen übertroffen hat.
                         </p>
                     </div>
                     <a href="https://lego-christmas.pages.dev/" target="_lego"><img src="assets/Lego.png"
@@ -495,12 +498,13 @@
             </div>
             <!-- Project 3 -->
             <div class="card" id="card3">
-                <img class="icon" src="assets/Propiedades CSS Icon.png" anchor="card3">
                 <div class="cardContent">
                     <div>
-                        <h2>Propiedades CSS</h2>
-                        <p>Página educativa sobre algunas propiedades CSS.
-                            Completamente adaptable a cualquier pantalla, resolución y dispositivo.
+                        <h2>CSS-Eigenschaften</h2>
+                        <p>Lehrreiche Seite über einige CSS-Eigenschaften.
+                            <br>
+                            Komplett flexibel an jeden Bildschirm, jede Resolution und jedes Device anpassbar.
+                            <br>Das war mein erster Zugang zu CSS.
                         </p>
                     </div>
                     <a href="https://css-properties.pages.dev/" target="_css"><img src="assets/Propiedades CSS.png"
@@ -602,39 +606,38 @@
     <div class="studies" id="education">
         <section class="education">
             <div class="educationContainer">
-                <h1 class="text">Formación:</h1>
+                <h1 class="text">Ausbildung:</h1>
                 <ul>
                     <li>
                         <span class="mt" style="font-weight: 600; font-size: 26px;">Bachillerato
-                            (Ciencias)</span><br>
-                        <span style="font-weight: 500;">La Inmaculada MJO</span> <br><span>(Septiembre 2021 - Junio
+                            (Wissenschaft)</span><br>
+                        <span style="font-weight: 500;">La Inmaculada MJO</span> <br><span>(September 2021 - Juni
                             2023)</span>
                     </li>
                     <li>
-                        <span class="mt" style="font-weight: 600; font-size: 26px;">Desarrollo de
-                            Aplicaciones
-                            <br>Multiplataforma</span><br>
-                        <span style="font-weight: 500;">CES Juan Pablo II</span> <br><span>(Septiembre 2023 -
-                            Presente)</span>
+                        <span class="mt" style="font-weight: 600; font-size: 26px;">Plattformübergreifende
+                            Anwendungsentwicklung</span><br>
+                        <span style="font-weight: 500;">CES Juan Pablo II</span> <br><span>(September 2023 -
+                            Gegernwart)</span>
                     </li>
                 </ul>
             </div>
         </section>
         <section class="certificates">
             <div class="certificatesContainer">
-                <h1 class="text">Certificados:</h1>
+                <h1 class="text">Zertifikate:</h1>
                 <ul>
                     <li>
                         <span class="mt" style="font-weight: 600; font-size: 26px;">
-                            Aspectos básicos del diseño UX</span><br>
-                        <a href="extras/Aspectos básicos del diseño UX.pdf" target="_blank">Certificado</a>
-                        - Emitido por Google (Coursera)
+                            UX-Design-Grundlagen</span><br>
+                        <a href="extras/Aspectos básicos del diseño UX.pdf" target="_blank">Zertifikat</a>
+                        - Ausgestellt von Google (Coursera)
                     </li>
                     <li>
                         <span class="mt" style="font-weight: 600; font-size: 26px;">
                             Cambridge C1</span><br>
-                        <a href="extras/Certificado Cambridge.jpg" target="_blank">Certificado</a>
-                        - Emitido por Cambridge
+                        <a href="extras/Certificado Cambridge.jpg" target="_blank">Zertifikat</a>
+                        - Ausgestellt Cambridge
                     </li>
                 </ul>
             </div>
@@ -643,7 +646,7 @@
 
     <!-- Call to Action -->
     <button class="calltoaction" tabindex="-1">
-        <a href="contact.html" tabindex="-1"><span class="btnText">CONTÁCTAME !</span></a>
+        <a href="contact.html" tabindex="-1"><span class="btnText">KONTAKT MIR !</span></a>
     </button>
 
     <!-- Contact -->
@@ -653,7 +656,7 @@
             <svg class="contactIcon">
                 <use href="#location"></use>
             </svg>
-            <span>Madrid (España)</span>
+            <span>Madrid (Spanien)</span>
             <svg class="contactIcon" style="margin-top: -60px; margin-left: 5px;">
                 <use href="#phone"></use>
             </svg>
