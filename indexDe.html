@@ -233,10 +233,92 @@
             prevScrollpos = currentScrollPos;
         }
 
+        // AUTOMATIC DOT ACTIVATION ON SCROLL
+
+        function observeVisibility(sectionId, callback) {
+            const target = document.getElementById(sectionId);
+
+            const options = {
+                root: null, // observing changes to visibility in the viewport
+                rootMargin: '0px',
+                threshold: 0.8 // 80% visibility
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // entry.isIntersecting is true when the target is visible
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+                        callback(true, entry.target);
+                    } else {
+                        callback(false, entry.target);
+                    }
+                });
+            }, options);
+
+            observer.observe(target);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            observeVisibility('home', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#');
+                    init(1);
+                }
+            });
+            observeVisibility('about-me', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#about-me');
+                    init(2);
+                }
+            });
+            observeVisibility('skills', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#skills');
+                    init(3);
+                }
+            });
+            observeVisibility('projects', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#projects');
+                    init(4);
+                }
+            });
+            observeVisibility('projectsS', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#projectsS');
+                    init(4);
+                }
+            });
+            observeVisibility('education', (isVisible, target) => {
+                if (isVisible && !target.classList.contains('active')) {
+                    history.replaceState(null, '', '#education');
+                    init(6);
+                }
+            });
+            window.addEventListener('scroll', function () {
+                // Checks if the user has scrolled to the end of the page
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    // Prevents multiple initializations
+                    if (!window.initCalled) {
+                        window.initCalled = true; // Set a flag to true to indicate init has been called
+                        history.replaceState(null, '', '#contact');
+                        init(7);
+                    }
+                } else {
+                    if (window.location.hash == "#contact" && window.initCalled == true) {
+                        history.replaceState(null, '', '#education');
+                        init(6);
+                    }
+                    window.initCalled = false; // Reset the flag if the user scrolls up
+                }
+            });
+        });
+
+
     </script>
 
     <!-- Hero and picture -->
-    <div class="hero-picture">
+    <div class="hero-picture" id="home">
         <!-- Hero -->
         <div class="heroContainer">
             <div class="hero">
