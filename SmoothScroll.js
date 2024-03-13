@@ -135,7 +135,6 @@
 
             addEvent('resize', refreshSize);
 
-            // TODO: attributeFilter?
             var config = {
                 attributes: true,
                 childList: true,
