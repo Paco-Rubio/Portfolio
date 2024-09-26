@@ -647,7 +647,7 @@ body::before {
   border: rgb(var(--primary-text-rgb), 0.1) solid 2px;
   border-radius: 3px;
   width: max(260px, 80%);
-  height: max(390px, 55%);
+  height: max(350px, 55%);
   inset: anchor(-7%) anchor(9%);
   transform-origin: 0 1;
   opacity: 0;
